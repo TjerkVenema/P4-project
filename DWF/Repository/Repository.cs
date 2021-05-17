@@ -9,7 +9,7 @@ namespace DWF.Repository
         {
             return new MySqlConnection(
                 "Server=127.0.0.1;Port=3306;" +
-                ";Database=dwf;" +
+                ";Database=portaaldwf;" +
                 "Uid=root;Pwd=Test12345;"
             );
         }
