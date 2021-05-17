@@ -5,7 +5,7 @@ namespace DWF.Repository
 {
     public class Repository
     {
-        public static IDbConnection Connect()
+        public IDbConnection Connect()
         {
             return new MySqlConnection(
                 "Server=127.0.0.1;Port=3306;" +

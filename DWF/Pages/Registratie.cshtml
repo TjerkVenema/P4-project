@@ -13,43 +13,14 @@
 </head>
 <body>
 <div>
-    <div class="tab">
-       <button class="tablinks" onclick="veranderRol(event, 'Student')">Student</button>
-       <button class="tablinks" onclick="veranderRol(event, 'Ondernemer')">Ondernemer</button>
-       <button class="tablinks" onclick="veranderRol(event, 'Coach')">Coach</button>
-     </div>
-     
-     <div id="Student" class="tabcontent">
-       <form method="post" >
-     </div>
-     
-     <div id="Ondernemer" class="tabcontent">
-        <p>test2</p>
-     </div>
-     
-  <div id="Coach" class="tabcontent">
-    <p>test3</p>
-  </div>
-  
+  <div class="rolContainer">
+      <a class="btn btn-lg left rolKnoppen" href="/StudentRegistratie">Student</a>
+      <a class="btn btn-lg middle rolKnoppen" href="/CoachRegistratie">Coach</a>
+      <a class="btn btn-lg right rolKnoppen" href="/OndernemerRegistratie">Ondernemer</a>
+    </div>
+
   <p id="welkomTekst">test</p>
-     
-  <script>
-     function veranderRol(evt, rol) {
-       var i, tabcontent, tablinks, welkomTekst;
-       tabcontent = document.getElementsByClassName("tabcontent");
-       welkomTekst = document.getElementById("welkomTekst");
-       for (i = 0; i < tabcontent.length; i++) {
-         tabcontent[i].style.display = "none";
-         welkomTekst.style.display = "none";
-       }
-       tablinks = document.getElementsByClassName("tablinks");
-       for (i = 0; i < tablinks.length; i++) {
-         tablinks[i].className = tablinks[i].className.replace(" active", "");
-       }
-       document.getElementById(rol).style.display = "block";
-       evt.currentTarget.className += " active";
-     }
-     </script>
+  
 </div>
 </body>
 </html>

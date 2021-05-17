@@ -1,3 +1,58 @@
-﻿.tabcontent{
-    display: none;
+﻿html{
+    overflow-y: scroll;
+}
+
+#dropdown{
+    margin-bottom: 1.5rem;
+    width: 100%;
+    border-radius: .25rem;
+    border: 1px solid #ced4da;
+    padding: .375rem .75rem;
+}
+
+.middle{
+    border-radius: 0;
+}
+
+.left{
+    border-radius: 10rem 0 0 10rem;
+}
+
+.right{
+    border-radius: 0 10rem 10rem 0;
+}
+
+#welkomTekst{
+    text-align: center;
+}
+
+.form-group{
+    margin-bottom: 0.75rem;
+}
+
+.rolContainer{
+    margin-bottom: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.rolKnoppen{
+    width: 33%;
+    margin-right: 0;
+    margin-left: 0;
+    border: 1px black solid;
+}
+
+.active{
+    background-color: #1b6ec2;
+}
+
+.flexcontainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.form{
+    width: 80%;
+    align-self: center;
 }
