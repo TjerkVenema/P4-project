@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 using DWF.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DWF.Pages
@@ -37,15 +38,24 @@ namespace DWF.Pages
 
         public void OnPost()
         {
-            if (ModelState.IsValid)
+            bool isDubbel = RegistratieRepository.Isdubbel(Email);
+            if (ModelState.IsValid && !isDubbel)
             {
-                int gebruiker = registratieRepository.CreateAccount(Email, Wachtwoord, Voornaam, Achternaam);
+                int gebruiker = registratieRepository.CreateAccount(Email, Wachtwoord, Voornaam, Achternaam, Opleiding,
+                    null);
                 string doel = String.Format("/{0}", gebruiker);
                 Response.Redirect(doel, permanent: true);
             }
             else
             {
-                Bericht = "Voer alstublieft de velden Juist in.";
+                if (isDubbel)
+                {
+                    Bericht = "Dit e-mailadres is al geregistreerd.";
+                }
+                else
+                {
+                    Bericht = "Voer alstublieft de velden juist in.";
+                }
             }
         }
     }

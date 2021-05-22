@@ -2,12 +2,12 @@
 /shelf/
 /workspace.xml
 # Rider ignored files
-/.idea.DWF.iml
 /modules.xml
-/contentModel.xml
+/.idea.DWF.iml
 /projectSettingsUpdater.xml
+/contentModel.xml
 # Datasource local storage ignored files
-/dataSources/
+/../../../../../../../../../:\Users\ianbe\Documents\P4-project\DWF\.idea\.idea.DWF.dir\.idea/dataSources/
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
