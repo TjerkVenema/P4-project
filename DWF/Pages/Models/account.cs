@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DWF;
 
 namespace account.Models
 {
-    public class Account : Database
+    public class Account : database
     {
         public string Email { get; set; }
 
