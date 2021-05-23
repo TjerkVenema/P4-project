@@ -10,45 +10,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7610b83c-5f91-45b4-a754-9794536663c0" name="Default Changelist" comment="j">
-      <change afterPath="$PROJECT_DIR$/Pages/OpdrachtAanvraagControle.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/OpdrachtAanvraagControle.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/css/TriagePagina's.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/dataSources/3f5385e5-12c6-443b-9f04-4429c82af08f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/dataSources/3f5385e5-12c6-443b-9f04-4429c82af08f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_05_2021_13_55__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_05_2021_13_55__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_05_2021_13_18__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_05_2021_13_18__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_05_2021_13_26__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_05_2021_13_26__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_13_41__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_13_41__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_13_42__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_13_42__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_13_56__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_13_56__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_14_01__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_14_01__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_14_05__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_14_05__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_14_12__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_14_12__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Merge_at_23_05_2021_13_43__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Merge_at_23_05_2021_13_43__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_13_32__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_13_32__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_13_50__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_13_50__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_13_55__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_13_55__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_14_25__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_14_25__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_14_28__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_14_28__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_6.xml" afterDir="false" />
+    <list default="true" id="2bd2a50b-6c32-4c8d-9c60-f445c1a941a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Models/Gebruiker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Aanvragen_student.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Aanvragen_student.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/OpdrachtControle.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/OpdrachtControle.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/StatestiekenPagina.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/StatestiekenPagina.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/StatestiekenPagina.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/StatestiekenPagina.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/TriageHomepagina.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/TriageHomepagina.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/TriageHomepagina.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/TriageHomepagina.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Repository/TriageRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TriageRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/css/Triage.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,16 +46,30 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Repository/Repository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/TriageHomepagina.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/StatestiekenPagina.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A59B5A91-4DFD-4CEA-BA2E-E7F9C7DCAAF0/28/ExecutorFactory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/obj/Debug/net5.0/Razor/Pages/OpdrachtControle.cshtml.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/StatestiekenPagina.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/01559F4C-5FB0-45E9-B6D7-60E4C77CA140/D/RazorPageBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/StudentRegistratie.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/StudentRegistratie.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/OndernemerRegistratie.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/OndernemerRegistratie.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/OpdrachtControle.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/CoachRegistratie.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/StatestiekenPagina.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/StatestiekenPagina.cshtml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Repository/Repository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Models/Aanvragen_student.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Models/Aanvragen_student.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/TriageHomepagina.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/obj/Debug/net5.0/Razor/Pages/OpdrachtControle.cshtml.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/StatestiekenPagina.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/StatestiekenPagina.cshtml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/OpdrachtControle.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -121,10 +102,11 @@
       <option value="$PROJECT_DIR$/Pages/TriageHomepagina.cshtml" />
       <option value="$PROJECT_DIR$/Pages/StatestiekenPagina.cshtml" />
       <option value="$PROJECT_DIR$/Pages/OpdrachtAanvraagControle.cshtml" />
-      <option value="$PROJECT_DIR$/Repository/TriageRepository.cs" />
       <option value="$PROJECT_DIR$/wwwroot/css/TriagePagina's.css" />
-      <option value="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml" />
+      <option value="$PROJECT_DIR$/Models/Gebruiker.cs" />
       <option value="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml.cs" />
+      <option value="$PROJECT_DIR$/Repository/TriageRepository.cs" />
+      <option value="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sezNQD3TnDv01piqeheZioAKt2" />
@@ -183,6 +165,10 @@
         <option name="Build" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.DWF" />
+      <item itemvalue=".NET Launch Settings Profile.DWF: IIS Express" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -261,37 +247,5 @@
     <MESSAGE value="triage voor een groot deel werkend" />
     <MESSAGE value="j" />
     <option name="LAST_COMMIT_MESSAGE" value="j" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Repository/TriageRepository.cs</url>
-          <line>124</line>
-          <properties documentPath="C:\Users\tjerk\RiderProjects\P4-project\DWF\Repository\TriageRepository.cs" initialLine="124" containingFunctionPresentation="method 'StudentAanvraagGoedgekeurd'">
-            <startOffsets>
-              <option value="4054" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4111" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml.cs</url>
-          <line>20</line>
-          <properties documentPath="C:\Users\tjerk\RiderProjects\P4-project\DWF\Pages\StudentAanvraagControle.cshtml.cs" initialLine="20" containingFunctionPresentation="method 'OnPostJa'">
-            <startOffsets>
-              <option value="525" />
-            </startOffsets>
-            <endOffsets>
-              <option value="526" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
