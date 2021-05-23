@@ -1,0 +1,98 @@
+Index: Pages/Index.cshtml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@page\r\n@model IndexModel\r\n@{\r\n    ViewData[\"Title\"] = \"Home page\";\r\n}\r\n\r\n<div class=\"text-center\">\r\n    <h1 class=\"display-4\">Welcome</h1>\r\n    <p>Learn about <a href=\"https://docs.microsoft.com/aspnet/core\">building Web apps with ASP.NET Core</a>.</p>\r\n</div>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Pages/Index.cshtml b/Pages/Index.cshtml
+--- a/Pages/Index.cshtml	(revision c1b046793488831c6e0501f095d352a6b4d4dc6e)
++++ b/Pages/Index.cshtml	(date 1621253770377)
+@@ -5,6 +5,5 @@
+ }
+ 
+ <div class="text-center">
+-    <h1 class="display-4">Welcome</h1>
+-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
++    <h1 class="display-4">Welkom bij de Digitale Werkplaats Friesland</h1>
+ </div>
+\ No newline at end of file
+Index: Pages/Shared/_Layout.cshtml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"utf-8\"/>\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\r\n    <title>@ViewData[\"Title\"] - DWF</title>\r\n    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x\" crossorigin=\"anonymous\" />\r\n    <link rel=\"stylesheet\" href=\"~/css/site.css\"/>\r\n</head>\r\n<body>\r\n<header>\r\n    <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3\">\r\n        <div class=\"container\">\r\n            <a class=\"navbar-brand\" asp-area=\"\" asp-page=\"/Index\">DWF</a>\r\n            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\".navbar-collapse\" aria-controls=\"navbarSupportedContent\"\r\n                    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n                <span class=\"navbar-toggler-icon\"></span>\r\n            </button>\r\n            <div class=\"navbar-collapse collapse d-sm-inline-flex justify-content-between\">\r\n                <ul class=\"navbar-nav flex-grow-1\">\r\n                    <li class=\"nav-item\">\r\n                        <a class=\"nav-link text-dark\" asp-area=\"\" asp-page=\"/Index\">Home</a>\r\n                    </li>\r\n                    <li class=\"nav-item\">\r\n                        <a class=\"nav-link text-dark\" asp-area=\"\" asp-page=\"/Privacy\">Privacy</a>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n</header>\r\n<div class=\"container\">\r\n    <main role=\"main\" class=\"pb-3\">\r\n        @RenderBody()\r\n    </main>\r\n</div>\r\n\r\n<footer class=\"border-top footer text-muted\">\r\n    <div class=\"container\">\r\n        &copy; 2021 - DWF - <a asp-area=\"\" asp-page=\"/Privacy\">Privacy</a>\r\n    </div>\r\n</footer>\r\n\r\n<script src=\"~/lib/jquery/dist/jquery.min.js\"></script>\r\n<script src=\"~/lib/bootstrap/dist/js/bootstrap.bundle.min.js\"></script>\r\n<script src=\"~/js/site.js\" asp-append-version=\"true\"></script>\r\n\r\n@await RenderSectionAsync(\"Scripts\", required: false)\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Pages/Shared/_Layout.cshtml b/Pages/Shared/_Layout.cshtml
+--- a/Pages/Shared/_Layout.cshtml	(revision c1b046793488831c6e0501f095d352a6b4d4dc6e)
++++ b/Pages/Shared/_Layout.cshtml	(date 1621253694552)
+@@ -25,6 +25,14 @@
+                         <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                     </li>
+                 </ul>
++                <ul class="navbar-nav flex-grow-1 justify-content-end">
++                    <li class="nav-item">
++                        <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
++                    </li>
++                    <li class="nav-item">
++                        <a class="nav-link text-dark" asp-area="" asp-page="/Registreer">Registreer</a>
++                    </li>
++                </ul>
+             </div>
+         </div>
+     </nav>
+Index: Pages/Triage Homepagina.cshtml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Pages/Triage Homepagina.cshtml b/Pages/Triage Homepagina.cshtml
+new file mode 100644
+--- /dev/null	(date 1621336620581)
++++ b/Pages/Triage Homepagina.cshtml	(date 1621336620581)
+@@ -0,0 +1,24 @@
++@page
++@model DWF.Pages.Triage_Homepagina
++
++
++<!DOCTYPE html>
++
++<html>
++<head>
++    <title></title>
++</head>
++<body>
++<div class="container-fluid">
++    <div class="row">
++        <div class="col-6 align-items-center">
++            hoi
++        </div>
++        
++        <div class="col-6">
++            hoi
++        </div>
++    </div>
++</div>
++</body>
++</html>
+\ No newline at end of file
+Index: Repository/Repository.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System.Data;\r\nusing MySql.Data.MySqlClient;\r\n\r\nnamespace DWF.Repository\r\n{\r\n    public class Repository\r\n    {\r\n        public static IDbConnection Connect()\r\n        {\r\n            return new MySqlConnection(\r\n                \"Server=127.0.0.1;Port=3306;\" +\r\n                \";Database=dwf;\" +\r\n                \"Uid=root;Pwd=Test12345;\"\r\n            );\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Repository/Repository.cs b/Repository/Repository.cs
+--- a/Repository/Repository.cs	(revision c1b046793488831c6e0501f095d352a6b4d4dc6e)
++++ b/Repository/Repository.cs	(date 1621252772949)
+@@ -9,7 +9,7 @@
+         {
+             return new MySqlConnection(
+                 "Server=127.0.0.1;Port=3306;" +
+-                ";Database=dwf;" +
++                ";Database=portaaldwf;" +
+                 "Uid=root;Pwd=Test12345;"
+             );
+         }

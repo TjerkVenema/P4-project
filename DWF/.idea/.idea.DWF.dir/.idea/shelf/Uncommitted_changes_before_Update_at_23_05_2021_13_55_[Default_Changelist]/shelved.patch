@@ -1,0 +1,643 @@
+Index: Pages/Index.cshtml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@page\r\n@model IndexModel\r\n@{\r\n    ViewData[\"Title\"] = \"Home page\";\r\n}\r\n\r\n<div class=\"text-center\">\r\n    <h1 class=\"display-4\">Welkom</h1>\r\n    <p>Learn about <a href=\"https://docs.microsoft.com/aspnet/core\">building Web apps with ASP.NET Core</a>.</p>\r\n</div>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Pages/Index.cshtml b/Pages/Index.cshtml
+--- a/Pages/Index.cshtml	(revision 139322c6ebe103f2958131c49b23a5d002497831)
++++ b/Pages/Index.cshtml	(date 1621770907769)
+@@ -6,5 +6,7 @@
+ 
+ <div class="text-center">
+     <h1 class="display-4">Welkom</h1>
++    <a href="/Registratie">test</a>
++    <a href="/TriageHomepagina">triage</a>
+     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+ </div>
+\ No newline at end of file
+Index: Pages/Models/account.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Pages/Models/account.cs b/Models/account.cs
+rename from Pages/Models/account.cs
+rename to Models/account.cs
+--- a/Pages/Models/account.cs	(revision 139322c6ebe103f2958131c49b23a5d002497831)
++++ b/Models/account.cs	(date 1621770907776)
+@@ -5,7 +5,7 @@
+ 
+ namespace account.Models
+ {
+-    public class Account : Database
++    public class Account 
+     {
+         public string Email { get; set; }
+ 
+Index: wwwroot/css/Triage.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/wwwroot/css/Triage.css b/wwwroot/css/Triage.css
+new file mode 100644
+--- /dev/null	(date 1621770907800)
++++ b/wwwroot/css/Triage.css	(date 1621770907800)
+@@ -0,0 +1,13 @@
++.kop{
++    text-align: center;
++    padding-bottom: 5%;
++}
++
++.subkop{
++    font-size: 200%;
++    padding-bottom: 2%;
++}
++
++.doos{
++    border: 3px solid black;
++}
+\ No newline at end of file
+Index: Pages/TriageHomepagina.cshtml.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Pages/TriageHomepagina.cshtml.cs b/Pages/TriageHomepagina.cshtml.cs
+new file mode 100644
+--- /dev/null	(date 1621770907805)
++++ b/Pages/TriageHomepagina.cshtml.cs	(date 1621770907805)
+@@ -0,0 +1,27 @@
++using System.Collections.Generic;
++using DWF.Models;
++using DWF.Repository;
++using Microsoft.AspNetCore.Mvc;
++using Microsoft.AspNetCore.Mvc.RazorPages;
++
++namespace DWF.Pages
++{
++    public class TriageHomepagina : PageModel
++    {
++        [BindProperty] public List<Opdracht> opdrachten { get; set; }
++
++        [BindProperty] public int opdrachtId { get; set; }
++
++        public void OnGet()
++        {
++            opdrachten = TriageRepository.Get();
++        }
++
++        public void OnPostBekijk()
++        {
++            var opdrachtid = opdrachtId;
++            Response.Cookies.Append("opdrachtId", opdrachtid.ToString());
++            Response.Redirect("/OpdrachtControle");
++        }
++    }
++}
+\ No newline at end of file
+Index: Pages/Shared/_Triage.cshtml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Pages/Shared/_Triage.cshtml b/Pages/Shared/_Triage.cshtml
+new file mode 100644
+--- /dev/null	(date 1621770907810)
++++ b/Pages/Shared/_Triage.cshtml	(date 1621770907810)
+@@ -0,0 +1,58 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="utf-8"/>
++    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
++    <title>@ViewData["Title"] - DWF</title>
++    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
++    <link rel="stylesheet" href="~/css/site.css"/>
++</head>
++<body>
++<header>
++    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
++        <div class="container">
++            <a class="navbar-brand" asp-area="" asp-page="/TriageHomepagina">DWF</a>
++            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
++                    aria-expanded="false" aria-label="Toggle navigation">
++                <span class="navbar-toggler-icon"></span>
++            </button>
++            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
++                <ul class="navbar-nav flex-grow-1">
++                    <li class="nav-item">
++                        <a class="nav-link text-dark" asp-area="" asp-page="/TriageHomepagina">Home</a>
++                    </li>
++                    <li class="nav-item">
++                        <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
++                    </li>
++                </ul>
++                <ul class="nav navbar-nav navbar-right">
++                    <li class="nav-item">
++                        <a class="nav-link text-dark" href="/StatestiekenPagina">statestieken</a>
++                    </li>
++                    <li class="nav-item">
++                        <a class="nav-link text-dark" href="/Index">Uitloggen</a>
++                    </li>
++                </ul>
++            </div>
++        </div>
++    </nav>
++</header>
++<div class="container">
++    <main role="main" class="pb-3">
++        @RenderBody()
++    </main>
++</div>
++
++<footer class="border-top footer text-muted">
++    <div class="container">
++        &copy; 2021 - DWF - <a asp-area="" asp-page="/Privacy">Privacy</a>
++    </div>
++</footer>
++
++<script src="~/lib/jquery/dist/jquery.min.js"></script>
++<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
++<script src="~/js/site.js" asp-append-version="true"></script>
++
++@await RenderSectionAsync("Scripts", false)
++</body>
++</html>
+\ No newline at end of file
+Index: Models/Aanvragen_student.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Models/Aanvragen_student.cs b/Models/Aanvragen_student.cs
+new file mode 100644
+--- /dev/null	(date 1621770907816)
++++ b/Models/Aanvragen_student.cs	(date 1621770907816)
+@@ -0,0 +1,15 @@
++namespace DWF.Models
++{
++    public class Aanvragen_student
++    {
++        public int opdracht_id { get; set; }
++
++        public int gebruiker_id { get; set; }
++
++        public string beschrijving { get; set; }
++
++        public string student_naam { get; set; }
++
++        public string opdracht_naam { get; set; }
++    }
++}
+\ No newline at end of file
+Index: Pages/TriageHomepagina.cshtml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Pages/TriageHomepagina.cshtml b/Pages/TriageHomepagina.cshtml
+new file mode 100644
+--- /dev/null	(date 1621770907821)
++++ b/Pages/TriageHomepagina.cshtml	(date 1621770907821)
+@@ -0,0 +1,49 @@
++@page
++@model DWF.Pages.TriageHomepagina
++
++@{
++    Layout = "Shared/_Triage";
++}
++
++<!DOCTYPE html>
++
++<html>
++<head>
++    <title></title>
++    <link rel="stylesheet" href="css/Triage.css">
++</head>
++<body>
++<div class="container-fluid">
++    <div class="row">
++        <div class="col-12">
++            <h1 class="kop">Triage Homepagina</h1>
++        </div>
++    </div>
++    <div class="row">
++        <div class="col-1"></div>
++
++        <div class="col-4">
++            <ul class="list-group">
++                <li class="list-group-item active">Alle opdrachten</li>
++                @foreach (var opdracht in Model.opdrachten)
++                {
++                    <form method="post">
++                        <input asp-for="opdrachtId" value="@opdracht.opdracht_id" type="hidden">
++                        <li class="list-group-item d-flex justify-content-between">
++                            @opdracht.opdracht_naam
++                            <button asp-page-handler="Bekijk" class="btn btn-secondary">Bekijk</button>
++                        </li>
++                    </form>
++                }
++            </ul>
++        </div>
++
++        <div class="col-2"></div>
++
++        <div class="col-4">Recente activiteiten</div>
++
++        <div class="col-1"></div>
++    </div>
++</div>
++</body>
++</html>
+\ No newline at end of file
+Index: Pages/StatestiekenPagina.cshtml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Pages/StatestiekenPagina.cshtml b/Pages/StatestiekenPagina.cshtml
+new file mode 100644
+--- /dev/null	(date 1621770907825)
++++ b/Pages/StatestiekenPagina.cshtml	(date 1621770907825)
+@@ -0,0 +1,68 @@
++@page
++@model DWF.Pages.StatestiekenPagina
++
++@{
++    Layout = "Shared/_Triage";
++}
++
++<!DOCTYPE html>
++
++<html>
++<head>
++    <link rel="stylesheet" href="css/Triage.css">
++    <title></title>
++</head>
++<body>
++<div class="container-fluid">
++    <div class="row">
++        <div class="col-12">
++            <h1 class="kop">Statestieken</h1>
++        </div>
++    </div>
++    <div class="row">
++        <div class="col-1"></div>
++
++        <div class="col-4">
++            <ul class="list-group">
++                <li class="list-group-item active">Student aanvragen</li>
++                @foreach (var aanvraag in Model.aanvragenStudent)
++                {
++                    <form method="post">
++                        <input asp-for="AanvraagStudent" value="@aanvraag" type="hidden">
++
++                        <li class="list-group-item d-flex justify-content-between flex-column">
++                            <p>Student: @aanvraag.student_naam</p>
++                            <p>Opdracht: @aanvraag.opdracht_naam</p>
++                            <button asp-page-handler="Bekijkaanvraag" class="btn btn-secondary">Bekijk</button>
++                        </li>
++                    </form>
++                }
++            </ul>
++        </div>
++
++        <div class="col-2"></div>
++
++        <div class="col-4">
++            <ul class="list-group">
++                <li class="list-group-item active">Opdracht aanvragen</li>
++                @foreach (var opdracht in Model.opdrachten)
++                {
++                    <form method="post">
++                        
++                        <input asp-for="opdracht" value="@opdracht" type="hidden">
++
++                        <li class="list-group-item d-flex justify-content-between flex-column">
++                            <p>Titel: @opdracht.opdracht_naam</p>
++                            <p>Indiener: @Model.GetNaam(opdracht.gebruiker_id)</p>
++                            <button asp-page-handler="Bekijkopdracht" class="btn btn-secondary">Bekijk</button>
++                        </li>
++                    </form>
++                }
++            </ul>
++        </div>
++
++        <div class="col-1"></div>
++    </div>
++</div>
++</body>
++</html>
+\ No newline at end of file
+Index: Pages/StatestiekenPagina.cshtml.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Pages/StatestiekenPagina.cshtml.cs b/Pages/StatestiekenPagina.cshtml.cs
+new file mode 100644
+--- /dev/null	(date 1621770907831)
++++ b/Pages/StatestiekenPagina.cshtml.cs	(date 1621770907831)
+@@ -0,0 +1,41 @@
++using System.Collections.Generic;
++using DWF.Models;
++using DWF.Repository;
++using Microsoft.AspNetCore.Mvc;
++using Microsoft.AspNetCore.Mvc.RazorPages;
++
++namespace DWF.Pages
++{
++    public class StatestiekenPagina : PageModel
++    {
++        [BindProperty] public List<Aanvragen_student> aanvragenStudent { get; set; }
++
++        [BindProperty] public Aanvragen_student AanvraagStudent { get; set; }
++
++        [BindProperty] public List<Opdracht> opdrachten { get; set; }
++
++        [BindProperty] public Opdracht opdracht { get; set; }
++        
++        public string GetNaam(int id)
++        {
++            return TriageRepository.GetNaam(id);
++        }
++
++        public void OnPostBekijkaanvraag()
++        {
++            //moet nog
++        }
++
++        public void OnPostBekijkopdracht()
++        {
++            //moet nog
++        }
++        
++        public void OnGet()
++        {
++            aanvragenStudent = TriageRepository.GetAanvragen();
++            opdrachten = TriageRepository.GetOpdrachtenBeoordeling();
++        }
++
++    }
++}
+\ No newline at end of file
+Index: Pages/OpdrachtControle.cshtml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Pages/OpdrachtControle.cshtml b/Pages/OpdrachtControle.cshtml
+new file mode 100644
+--- /dev/null	(date 1621770907835)
++++ b/Pages/OpdrachtControle.cshtml	(date 1621770907835)
+@@ -0,0 +1,49 @@
++@page
++@model DWF.Pages.OpdrachtControle
++
++@{
++    Layout = "Shared/_Triage";
++}
++
++<!DOCTYPE html>
++
++<html>
++<head>
++    <link rel="stylesheet" href="css/Triage.css">
++    <title></title>
++</head>
++<body>
++<div class="container-fluid">
++    <div class="row">
++        <div class="col-12">
++            <h1 class="kop">Opdracht Controle</h1>
++        </div>
++    </div>
++    <div class="row">
++        <div class="col-1"></div>
++        <div class="col-10 subkop">
++            Opracht: @Model.Opdracht.opdracht_naam
++        </div>
++        <div class="col-1"></div>
++    </div>
++    <div class="row">
++        <div class="col-1"></div>
++        <div class="col-10 subkop">
++            Studenten:
++            @foreach (var a in Model.Studenten)
++            {
++                <h2>@a</h2>
++            }
++        </div>
++        <div class="col-1"></div>
++    </div>
++    <div class="row justify-content-between" style="height: 40vh">
++        <div class="col-1 p-2"></div>
++        <div class="col-3 p-2 doos">Bestanden</div>
++        <div class="col-3 p-2 doos">Agenda</div>
++        <div class="col-3 p-2 doos">Recente activiteiten</div>
++        <div class="col-1 p-2"></div>
++    </div>
++</div>
++</body>
++</html>
+\ No newline at end of file
+Index: Repository/TriageRepository.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Repository/TriageRepository.cs b/Repository/TriageRepository.cs
+new file mode 100644
+--- /dev/null	(date 1621770907840)
++++ b/Repository/TriageRepository.cs	(date 1621770907840)
+@@ -0,0 +1,110 @@
++using System.Collections.Generic;
++using Dapper;
++using DWF.Models;
++
++namespace DWF.Repository
++{
++    public class TriageRepository
++    {
++        public static Repository repository = new();
++
++        public static List<Opdracht> Get()
++        {
++            using var connectie = repository.Connect();
++            var opdrachtlijst = connectie.Query<Opdracht>(
++                "SELECT * FROM opdrachten WHERE opdracht_status = @opdracht_status",
++                new
++                {
++                    opdracht_status = 1
++                });
++            return opdrachtlijst as List<Opdracht>;
++        }
++
++        public static Opdracht GetById(int opdrachtId)
++        {
++            using var connectie = repository.Connect();
++            var opdracht = connectie.QuerySingleOrDefault<Opdracht>(
++                "SELECT * FROM opdrachten WHERE opdracht_id = @opdracht_id",
++                new
++                {
++                    opdracht_id = opdrachtId
++                });
++            return opdracht;
++        }
++
++        public static List<string> GetStudents(int opdrachtId)
++        {
++            using var connectie = repository.Connect();
++            var studentenId = connectie.Query<int>(
++                "SELECT gebruiker_id FROM doet WHERE opdracht_id = @opdracht_Id",
++                new
++                {
++                    opdracht_Id = opdrachtId
++                });
++
++            var studenten = new List<string>();
++
++            foreach (var a in studentenId)
++            {
++                studenten.Add(GetNaam(a));
++            }
++
++            return studenten;
++        }
++
++        public static List<Aanvragen_student> GetAanvragen()
++        {
++            using var connectie = repository.Connect();
++            var aanvragen = connectie.Query<Aanvragen_student>(
++                "SELECT * FROM aanvragen_student");
++
++            foreach (var a in aanvragen)
++            {
++                a.opdracht_naam = connectie.QuerySingleOrDefault<string>(
++                    "SELECT opdracht_naam FROM opdrachten WHERE opdracht_Id = @opdrachtId",
++                    new
++                    {
++                        opdrachtId = a.opdracht_id
++                    });
++                
++                a.student_naam = GetNaam(a.gebruiker_id);
++            }
++
++            return aanvragen as List<Aanvragen_student>;
++        }
++
++        public static List<Opdracht> GetOpdrachtenBeoordeling()
++        {
++            using var connectie = repository.Connect();
++            var opdrachten = connectie.Query<Opdracht>(
++                "SELECT * FROM opdrachten WHERE opdracht_status = @opdracht_status",
++                new
++                {
++                    opdracht_status = 4
++                });
++
++            return opdrachten as List<Opdracht>;
++        }
++
++        public static string GetNaam(int Id)
++        {
++            using var connectie = repository.Connect();
++            var voornaam = connectie.QuerySingleOrDefault<string>(
++                "SELECT voornaam FROM gebruikers WHERE gebruiker_id = @gebruiker_id",
++                new
++                {
++                    gebruiker_id = Id
++                });
++
++            var achternaam = connectie.QuerySingleOrDefault<string>(
++                "SELECT achternaam FROM gebruikers WHERE gebruiker_id = @gebruiker_id",
++                new
++                {
++                    gebruiker_id = Id
++                });
++
++            var naam = voornaam + " " + achternaam;
++            return naam;
++        }
++    }
++}
+\ No newline at end of file
+Index: Pages/OpdrachtControle.cshtml.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Pages/OpdrachtControle.cshtml.cs b/Pages/OpdrachtControle.cshtml.cs
+new file mode 100644
+--- /dev/null	(date 1621770907845)
++++ b/Pages/OpdrachtControle.cshtml.cs	(date 1621770907845)
+@@ -0,0 +1,23 @@
++using System;
++using System.Collections.Generic;
++using DWF.Models;
++using DWF.Repository;
++using Microsoft.AspNetCore.Mvc;
++using Microsoft.AspNetCore.Mvc.RazorPages;
++
++namespace DWF.Pages
++{
++    public class OpdrachtControle : PageModel
++    {
++        [BindProperty] public Opdracht Opdracht { get; set; }
++
++        [BindProperty] public List<string> Studenten { get; set; }
++
++        public void OnGet()
++        {
++            var opdrachtId = Convert.ToInt32(Request.Cookies["opdrachtId"]);
++            Opdracht = TriageRepository.GetById(opdrachtId);
++            Studenten = TriageRepository.GetStudents(opdrachtId);
++        }
++    }
++}
+\ No newline at end of file
+Index: Models/Opdracht.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Models/Opdracht.cs b/Models/Opdracht.cs
+new file mode 100644
+--- /dev/null	(date 1621770907851)
++++ b/Models/Opdracht.cs	(date 1621770907851)
+@@ -0,0 +1,25 @@
++namespace DWF.Models
++{
++    public class Opdracht
++    {
++        public enum status
++        {
++            bezig,
++            beschikbaar,
++            afgerond,
++            moet_beoordeeld
++        }
++
++        public int opdracht_id { get; set; }
++
++        public int gebruiker_id { get; set; }
++
++        public string opdracht_naam { get; set; }
++
++        public string beschrijving { get; set; }
++
++        public string gewenste_opleiding { get; set; }
++
++        public status opdracht_status { get; set; }
++    }
++}
+\ No newline at end of file
+diff --git a/Pages/Models/database.cs b/Models/database.cs
+rename from Pages/Models/database.cs
+rename to Models/database.cs
+diff --git a/Pages/Models/login.cs b/Models/login.cs
+rename from Pages/Models/login.cs
+rename to Models/login.cs

@@ -1,0 +1,19 @@
+Index: Repository/Repository.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System.Data;\r\nusing MySql.Data.MySqlClient;\r\n\r\nnamespace DWF.Repository\r\n{\r\n    public class Repository\r\n    {\r\n        public static IDbConnection Connect()\r\n        {\r\n            return new MySqlConnection(\r\n                \"Server=127.0.0.1;Port=3306;\" +\r\n                \";Database=dwf;\" +\r\n                \"Uid=root;Pwd=Test12345;\"\r\n            );\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Repository/Repository.cs b/Repository/Repository.cs
+--- a/Repository/Repository.cs	(revision c1b046793488831c6e0501f095d352a6b4d4dc6e)
++++ b/Repository/Repository.cs	(date 1621252358077)
+@@ -9,7 +9,7 @@
+         {
+             return new MySqlConnection(
+                 "Server=127.0.0.1;Port=3306;" +
+-                ";Database=dwf;" +
++                ";Database=portaaldwf;" +
+                 "Uid=root;Pwd=Test12345;"
+             );
+         }
