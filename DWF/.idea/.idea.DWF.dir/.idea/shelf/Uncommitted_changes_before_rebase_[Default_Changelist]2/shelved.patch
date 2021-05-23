@@ -1,0 +1,35 @@
+Index: Pages/Triage Homepagina.cshtml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Pages/Triage Homepagina.cshtml b/Pages/Triage Homepagina.cshtml
+new file mode 100644
+--- /dev/null	(date 1621337218695)
++++ b/Pages/Triage Homepagina.cshtml	(date 1621337218695)
+@@ -0,0 +1,24 @@
++@page
++@model DWF.Pages.Triage_Homepagina
++
++
++<!DOCTYPE html>
++
++<html>
++<head>
++    <title></title>
++</head>
++<body>
++<div class="container-fluid">
++    <div class="row">
++        <div class="col-6 align-items-center">
++            hoi
++        </div>
++        
++        <div class="col-6">
++            hoi
++        </div>
++    </div>
++</div>
++</body>
++</html>
+\ No newline at end of file
