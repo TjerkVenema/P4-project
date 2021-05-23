@@ -11,11 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bd2a50b-6c32-4c8d-9c60-f445c1a941a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Models/Gebruiker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/TriageRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TriageRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/portaaldwf_aanvragen_student0.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/portaaldwf_coach0.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/portaaldwf_doet0.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/portaaldwf_gebruikers0.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/portaaldwf_opdrachten0.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/portaaldwf_opdrachtgevers0.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/portaaldwf_studenten0.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/portaaldwf_takenlijst0.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Database/portaaldwf_triage0.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +36,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="main" />
+        <entry key="$PROJECT_DIR$/.." value="Tjerk" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -208,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621780011425</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Triage omgeving voor een groot deel werkend">
+      <created>1621793397327</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1621793397327</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +257,7 @@
     <MESSAGE value="database connection string" />
     <MESSAGE value="triage voor een groot deel werkend" />
     <MESSAGE value="j" />
-    <option name="LAST_COMMIT_MESSAGE" value="j" />
+    <MESSAGE value="Triage omgeving voor een groot deel werkend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Triage omgeving voor een groot deel werkend" />
   </component>
 </project>
