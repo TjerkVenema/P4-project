@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DWF.Models;
 using DWF.Repository;
@@ -10,11 +11,11 @@ namespace DWF.Pages
     {
         [BindProperty] public List<Aanvragen_student> aanvragenStudent { get; set; }
 
-        [BindProperty] public Aanvragen_student AanvraagStudent { get; set; }
+        [BindProperty] public int AanvraagStudentId { get; set; }
 
         [BindProperty] public List<Opdracht> opdrachten { get; set; }
 
-        [BindProperty] public Opdracht opdracht { get; set; }
+        [BindProperty] public int opdrachtId { get; set; }
         
         public string GetNaam(int id)
         {
@@ -23,16 +24,20 @@ namespace DWF.Pages
 
         public void OnPostBekijkaanvraag()
         {
-            //moet nog
+            Response.Cookies.Append("AanvraagId", AanvraagStudentId.ToString());
+            Response.Redirect("/StudentAanvraagControle");
         }
 
         public void OnPostBekijkopdracht()
         {
-            //moet nog
+            Response.Cookies.Append("OpdrachtAanvraagId", opdrachtId.ToString());
+            Response.Redirect("/OpdrachtAanvraagControle");
         }
         
         public void OnGet()
         {
+            Response.Cookies.Delete("AanvraagId");
+            Response.Cookies.Delete("OpdrachtAanvraagId");
             aanvragenStudent = TriageRepository.GetAanvragen();
             opdrachten = TriageRepository.GetOpdrachtenBeoordeling();
         }
