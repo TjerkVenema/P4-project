@@ -5,11 +5,11 @@ namespace DWF.Repository
 {
     public class Repository
     {
-        public IDbConnection Connect()
+        public static IDbConnection Connect()
         {
             return new MySqlConnection(
                 "Server=127.0.0.1;Port=3306;" +
-                ";Database=portaaldwf;" +
+                ";Database=dwf;" +
                 "Uid=root;Pwd=Test12345;"
             );
         }

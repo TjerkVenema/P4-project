@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: portaaldwf
+-- Host: localhost    Database: portaaldwf
 -- ------------------------------------------------------
 -- Server version	8.0.25
 
@@ -28,11 +28,9 @@ CREATE TABLE `gebruikers` (
   `voornaam` varchar(100) NOT NULL,
   `achternaam` varchar(100) NOT NULL,
   `wachtwoord` varchar(100) NOT NULL,
-  `opleiding` enum('MBO','HBO','Universiteit') DEFAULT NULL,
-  `zakelijkNummer` int DEFAULT NULL,
   PRIMARY KEY (`gebruiker_id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -53,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-22 23:08:27
+-- Dump completed on 2021-05-12 16:53:13
