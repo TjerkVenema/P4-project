@@ -1,4 +1,5 @@
 using System;
+using account.Models;
 using DWF.Models;
 using DWF.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -10,10 +11,14 @@ namespace DWF.Pages
     {
         [BindProperty]
         public Aanvragen_student AanvragenStudent { get; set; }
+        
+        [BindProperty]
+        public Gebruiker student { get; set; }
 
         public void OnGet()
         {
             int Id = Convert.ToInt32(Request.Cookies["AanvraagId"]);
+            student = TriageRepository.GetStudentAanvraag(Id);
             AanvragenStudent = TriageRepository.GetAanvraagById(Id);
         }
 

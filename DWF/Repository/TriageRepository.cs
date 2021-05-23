@@ -139,6 +139,27 @@ namespace DWF.Repository
                     aanvraag_id = Id
                 });
         }
+
+        public static Gebruiker GetStudentAanvraag(int id)
+        {
+            using var connectie = repository.Connect();
+
+            var gebruiker_id = connectie.QuerySingleOrDefault<int>(
+                "SELECT gebruiker_id FROM aanvragen_student WHERE aanvraag_id = @aanvraag_id",
+                new
+                {
+                    aanvraag_id = id
+                });
+            
+            var student = connectie.QuerySingleOrDefault<Gebruiker>(
+                "SELECT * FROM gebruikers WHERE gebruiker_id = @gebruikerId",
+                new
+                {
+                    gebruikerId = gebruiker_id
+                });
+            student.naam = GetNaam(student.gebruiker_id);
+            return student;
+        }
         
         public static string GetNaam(int Id)
         {
