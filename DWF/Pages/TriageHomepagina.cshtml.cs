@@ -14,6 +14,7 @@ namespace DWF.Pages
 
         public void OnGet()
         {
+            Response.Cookies.Delete("opdrachtId");
             opdrachten = TriageRepository.Get();
         }
 

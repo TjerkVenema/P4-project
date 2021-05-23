@@ -73,6 +73,27 @@ namespace DWF.Repository
             return aanvragen as List<Aanvragen_student>;
         }
 
+        public static Aanvragen_student GetAanvraagById(int Id)
+        {
+            using var connectie = repository.Connect();
+            var aanvraag = connectie.QuerySingleOrDefault<Aanvragen_student>(
+                "SELECT * FROM aanvragen_student WHERE aanvraag_id = @aanvraag_id",
+                new
+                {
+                    aanvraag_id = Id
+                });
+            
+            aanvraag.opdracht_naam = connectie.QuerySingleOrDefault<string>(
+                "SELECT opdracht_naam FROM opdrachten WHERE opdracht_Id = @opdrachtId",
+                new
+                {
+                    opdrachtId = aanvraag.opdracht_id
+                });
+                
+            aanvraag.student_naam = GetNaam(aanvraag.gebruiker_id);
+            return aanvraag;
+        }
+        
         public static List<Opdracht> GetOpdrachtenBeoordeling()
         {
             using var connectie = repository.Connect();
@@ -86,6 +107,39 @@ namespace DWF.Repository
             return opdrachten as List<Opdracht>;
         }
 
+        public static void StudentAanvraagAfgekeurd(int Id)
+        {
+            using var connectie = repository.Connect();
+            connectie.Execute(
+                "DELETE FROM aanvragen_student WHERE aanvraag_id = @aanvraag_id",
+                new
+                {
+                    aanvraag_id = Id
+                });
+        }
+
+        public static void StudentAanvraagGoedgekeurd(int Id)
+        {
+            using var connectie = repository.Connect();
+
+            Aanvragen_student aanvragenStudent = GetAanvraagById(Id);
+            
+            connectie.Execute(
+                "INSERT INTO doet(gebruiker_id, opdracht_id) VALUES (@gebruikerId, @opdrachtId)",
+                new
+                {
+                    gebruikerId = aanvragenStudent.gebruiker_id,
+                    opdrachtId = aanvragenStudent.opdracht_id
+                });
+            
+            connectie.Execute(
+                "DELETE FROM aanvragen_student WHERE aanvraag_id = @aanvraag_id",
+                new
+                {
+                    aanvraag_id = Id
+                });
+        }
+        
         public static string GetNaam(int Id)
         {
             using var connectie = repository.Connect();

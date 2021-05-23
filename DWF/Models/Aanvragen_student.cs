@@ -2,6 +2,7 @@ namespace DWF.Models
 {
     public class Aanvragen_student
     {
+        public int aanvraag_id { get; set; }
         public int opdracht_id { get; set; }
 
         public int gebruiker_id { get; set; }
