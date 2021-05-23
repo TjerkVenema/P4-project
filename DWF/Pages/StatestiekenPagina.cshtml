@@ -9,7 +9,7 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="css/Triage.css">
+    <link href="@Url.Content("~/css/TriagePagina's.css")" type="text/css" rel="stylesheet">
     <title></title>
 </head>
 <body>
@@ -28,7 +28,7 @@
                 @foreach (var aanvraag in Model.aanvragenStudent)
                 {
                     <form method="post">
-                        <input asp-for="AanvraagStudent" value="@aanvraag" type="hidden">
+                        <input asp-for="AanvraagStudentId" value="@aanvraag.aanvraag_id" type="hidden">
 
                         <li class="list-group-item d-flex justify-content-between flex-column">
                             <p>Student: @aanvraag.student_naam</p>
@@ -49,7 +49,7 @@
                 {
                     <form method="post">
                         
-                        <input asp-for="opdracht" value="@opdracht" type="hidden">
+                        <input asp-for="opdrachtId" value="@opdracht.opdracht_id" type="hidden">
 
                         <li class="list-group-item d-flex justify-content-between flex-column">
                             <p>Titel: @opdracht.opdracht_naam</p>

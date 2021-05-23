@@ -1,0 +1,51 @@
+@page
+@model DWF.Pages.StudentAanvraagControle
+
+@{
+    Layout = "Shared/_Triage";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <link href="@Url.Content("~/css/TriagePagina's.css")" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="row ruimteboven">
+                <ul class="list-group flex-fill">
+                    <li class="list-group-item list-group-item-secondary">Aanvraag voor</li>
+                    <li class="list-group-item">@Model.AanvragenStudent.opdracht_naam</li>
+                </ul>
+            </div>
+            <div class="row ruimteboven">
+                <ul class="list-group flex-fill">
+                    <li class="list-group-item list-group-item-secondary">Student beschrijving</li>
+                    <li class="list-group-item">@Model.AanvragenStudent.beschrijving</li>
+                </ul>
+            </div>
+            <div class="row d-flex flex-nowrap ruimteboven">
+                <form method="post">
+                    <div class="justify-content-around d-flex">
+                        <button asp-page-handler="Ja" type="submit" class="btn btn-secondary w-25">ja</button>
+                        <button asp-page-handler="Nee" type="submit" class="btn btn-secondary w-25">nee</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-3 doos">
+            <h2>Contact gegevens</h2>
+            <h5>Student: </h5>
+            <h5>Email: </h5>
+            <h5>Opleiding: </h5>
+        </div>
+    </div>
+</div>
+</body>
+</html>
