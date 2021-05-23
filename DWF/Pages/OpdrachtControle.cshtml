@@ -1,0 +1,49 @@
+@page
+@model DWF.Pages.OpdrachtControle
+
+@{
+    Layout = "Shared/_Triage";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="css/Triage.css">
+    <title></title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="kop">Opdracht Controle</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 subkop">
+            Opracht: @Model.Opdracht.opdracht_naam
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 subkop">
+            Studenten:
+            @foreach (var a in Model.Studenten)
+            {
+                <h2>@a</h2>
+            }
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row justify-content-between" style="height: 40vh">
+        <div class="col-1 p-2"></div>
+        <div class="col-3 p-2 doos">Bestanden</div>
+        <div class="col-3 p-2 doos">Agenda</div>
+        <div class="col-3 p-2 doos">Recente activiteiten</div>
+        <div class="col-1 p-2"></div>
+    </div>
+</div>
+</body>
+</html>
