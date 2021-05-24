@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DWF.Pages
 {
-    public class StatestiekenPagina : PageModel
+    public class Aanvragen : PageModel
     {
         [BindProperty] public List<Aanvragen_student> aanvragenStudent { get; set; }
 

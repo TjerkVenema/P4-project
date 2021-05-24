@@ -20,6 +20,19 @@ namespace DWF.Repository
             return opdrachtlijst as List<Opdracht>;
         }
 
+        public static Gebruiker GetGebruiker(int Id)
+        {
+            using var connectie = repository.Connect();
+            var gebruiker = connectie.QuerySingleOrDefault<Gebruiker>(
+                "SELECT * FROM gebruikers WHERE gebruiker_id = @gebruiker_id",
+                new
+                {
+                    gebruiker_id = Id
+                });
+            gebruiker.naam = GetNaam(gebruiker.gebruiker_id);
+            return gebruiker;
+        }
+        
         public static Opdracht GetById(int opdrachtId)
         {
             using var connectie = repository.Connect();
@@ -131,6 +144,14 @@ namespace DWF.Repository
                     gebruikerId = aanvragenStudent.gebruiker_id,
                     opdrachtId = aanvragenStudent.opdracht_id
                 });
+
+            connectie.Execute(
+                "UPDATE opdrachten SET opdracht_status = @opdracht_status WHERE opdracht_id = @opdrachtId",
+                new
+                {
+                    opdracht_status = 1,
+                    opdrachtId = aanvragenStudent.opdracht_id
+                });
             
             connectie.Execute(
                 "DELETE FROM aanvragen_student WHERE aanvraag_id = @aanvraag_id",
@@ -140,6 +161,29 @@ namespace DWF.Repository
                 });
         }
 
+        public static void OpdrachtAanvraagGoedgekeurd(int Id)
+        {
+            using var connectie = repository.Connect();
+            connectie.Execute(
+                "UPDATE opdrachten SET opdracht_status = @opdracht_status WHERE opdracht_id = @opdracht_id ",
+                new
+                {
+                    opdracht_status = 2,
+                    opdracht_id = Id
+                });
+        }
+
+        public static void OpdrachtAanvraagAfgekeurd(int Id)
+        {
+            using var connectie = repository.Connect();
+            connectie.Execute(
+                "DELETE FROM opdrachten WHERE opdracht_id = @opdracht_id",
+                new
+                {
+                    opdracht_id = Id
+                });
+        }
+        
         public static Gebruiker GetStudentAanvraag(int id)
         {
             using var connectie = repository.Connect();
@@ -159,6 +203,18 @@ namespace DWF.Repository
                 });
             student.naam = GetNaam(student.gebruiker_id);
             return student;
+        }
+
+        public static Opdracht GetOpdrachtAanvraag(int Id)
+        {
+            using var connectie = repository.Connect();
+            var opdracht = connectie.QuerySingleOrDefault<Opdracht>(
+                "SELECT * FROM opdrachten WHERE opdracht_id = @opdracht_id",
+                new
+                {
+                    opdracht_id = Id
+                });
+            return opdracht;
         }
         
         public static string GetNaam(int Id)

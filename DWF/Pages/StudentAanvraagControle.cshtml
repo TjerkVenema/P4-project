@@ -13,6 +13,7 @@
     <link href="@Url.Content("~/css/TriagePagina's.css")" type="text/css" rel="stylesheet">
 </head>
 <body>
+<a href="/Aanvragen" class="btn btn-secondary" id="fixedbutton">Terug</a>
 <div class="container-fluid">
     <div class="row">
         <div class="col-4"></div>
@@ -32,8 +33,8 @@
             <div class="row d-flex flex-nowrap ruimteboven">
                 <form method="post">
                     <div class="justify-content-around d-flex">
-                        <button asp-page-handler="Ja" type="submit" class="btn btn-secondary w-25">ja</button>
-                        <button asp-page-handler="Nee" type="submit" class="btn btn-secondary w-25">nee</button>
+                        <button asp-page-handler="Ja" type="submit" class="btn btn-secondary">Goedkeuren</button>
+                        <button asp-page-handler="Nee" type="submit" class="btn btn-secondary w-25">Afkeuren</button>
                     </div>
                 </form>
             </div>

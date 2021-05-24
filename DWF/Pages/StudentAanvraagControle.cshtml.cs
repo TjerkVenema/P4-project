@@ -26,14 +26,14 @@ namespace DWF.Pages
         {
             int Id = Convert.ToInt32(Request.Cookies["AanvraagId"]);
             TriageRepository.StudentAanvraagGoedgekeurd(Id);
-            Response.Redirect("/StatestiekenPagina");
+            Response.Redirect("/Aanvragen");
         }
         
         public void OnPostNee()
         {
             int Id = Convert.ToInt32(Request.Cookies["AanvraagId"]);
             TriageRepository.StudentAanvraagAfgekeurd(Id);
-            Response.Redirect("/StatestiekenPagina");
+            Response.Redirect("/Aanvragen");
         }
     }
 }

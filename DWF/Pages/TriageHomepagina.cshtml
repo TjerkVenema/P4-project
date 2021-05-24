@@ -24,16 +24,25 @@
 
         <div class="col-4">
             <ul class="list-group">
-                <li class="list-group-item active">Alle opdrachten</li>
-                @foreach (var opdracht in Model.opdrachten)
+                <li class="list-group-item active">Alle gaande opdrachten</li>
+                @if (Model.opdrachten.Count != 0)
                 {
-                    <form method="post">
-                        <input asp-for="opdrachtId" value="@opdracht.opdracht_id" type="hidden">
-                        <li class="list-group-item d-flex justify-content-between">
-                            @opdracht.opdracht_naam
-                            <button asp-page-handler="Bekijk" class="btn btn-secondary">Bekijk</button>
-                        </li>
-                    </form>
+                    @foreach (var opdracht in Model.opdrachten)
+                    {
+                        <form method="post">
+                            <input asp-for="opdrachtId" value="@opdracht.opdracht_id" type="hidden">
+                            <li class="list-group-item d-flex justify-content-between">
+                                @opdracht.opdracht_naam
+                                <button asp-page-handler="Bekijk" class="btn btn-secondary">Bekijk</button>
+                            </li>
+                        </form>
+                    }
+                }
+                else
+                {
+                    <li class="list-group-item d-flex justify-content-between flex-column">
+                        <p>Er zijn op dit moment geen opdrachten gaande</p>
+                    </li>
                 }
             </ul>
         </div>

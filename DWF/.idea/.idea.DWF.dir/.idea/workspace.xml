@@ -10,29 +10,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bd2a50b-6c32-4c8d-9c60-f445c1a941a9" name="Default Changelist" comment="database update">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_05_2021_13_55_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_05_2021_13_18_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_05_2021_13_26_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_13_41_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_13_42_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_13_56_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_14_01_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_14_05_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2021_14_12_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Merge_at_23_05_2021_13_43_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_13_32_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_13_50_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_13_55_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_14_25_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_Update_at_23_05_2021_14_28_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]2/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]3/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]4/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]5/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]6/shelved.patch" beforeDir="false" />
+    <list default="true" id="2bd2a50b-6c32-4c8d-9c60-f445c1a941a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Helpers/SessionHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pages/Statistieken.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pages/Statistieken.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/dataSources/3f5385e5-12c6-443b-9f04-4429c82af08f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/dataSources/3f5385e5-12c6-443b-9f04-4429c82af08f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DWF.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DWF.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DWF.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Gebruiker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Gebruiker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/OpdrachtAanvraagControle.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/OpdrachtAanvraagControle.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/OpdrachtAanvraagControle.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/OpdrachtAanvraagControle.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/OpdrachtControle.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/OpdrachtControle.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Shared/_Triage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Shared/_Triage.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/StatestiekenPagina.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Aanvragen.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/StatestiekenPagina.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Aanvragen.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/TriageHomepagina.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/TriageHomepagina.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repository/TriageRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/TriageRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/css/TriagePagina's.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/TriagePagina's.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +46,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="Tjerk" />
+        <entry key="$PROJECT_DIR$/.." value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -63,30 +60,17 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/TriageHomepagina.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/StatestiekenPagina.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A59B5A91-4DFD-4CEA-BA2E-E7F9C7DCAAF0/28/ExecutorFactory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/StatestiekenPagina.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/01559F4C-5FB0-45E9-B6D7-60E4C77CA140/D/RazorPageBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Pages/StudentRegistratie.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Pages/StudentRegistratie.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/OndernemerRegistratie.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/OndernemerRegistratie.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/OpdrachtControle.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/CoachRegistratie.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/StatestiekenPagina.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/StatestiekenPagina.cshtml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Repository/Repository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Models/Aanvragen_student.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Models/Aanvragen_student.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/TriageHomepagina.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/01559F4C-5FB0-45E9-B6D7-60E4C77CA140/D/RazorPageBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/obj/Debug/net5.0/Razor/Pages/OpdrachtControle.cshtml.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/StatestiekenPagina.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/StatestiekenPagina.cshtml.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/tjerk/RiderProjects/P4-project/DWF/Pages/OpdrachtControle.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A59B5A91-4DFD-4CEA-BA2E-E7F9C7DCAAF0/30/PageActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Repository/Repository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pages/StudentRegistratie.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A59B5A91-4DFD-4CEA-BA2E-E7F9C7DCAAF0/28/ExecutorFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Pages/StudentRegistratie.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -105,25 +89,40 @@
       <option value="$PROJECT_DIR$/Pages/Triage/TriageHomepagina1.cshtml" />
       <option value="$PROJECT_DIR$/Pages/Triage/OpdrachtControle.cshtml" />
       <option value="$PROJECT_DIR$/Pages/Triage/TriageHomepagina.cshtml" />
-      <option value="$PROJECT_DIR$/Pages/Index.cshtml" />
       <option value="$PROJECT_DIR$/Models/Opdracht.cs" />
       <option value="$PROJECT_DIR$/Pages/OpdrachtControle.cshtml.cs" />
       <option value="$PROJECT_DIR$/Pages/Models/account.cs" />
       <option value="$PROJECT_DIR$/Pages/TriageHomepagina.cshtml.cs" />
       <option value="$PROJECT_DIR$/Models/Aanvragen_student.cs" />
       <option value="$PROJECT_DIR$/Pages/StatestiekenPagina.cshtml.cs" />
-      <option value="$PROJECT_DIR$/Pages/Shared/_Triage.cshtml" />
       <option value="$PROJECT_DIR$/wwwroot/css/Triage.css" />
       <option value="$PROJECT_DIR$/wwwroot/css/hoi.css" />
-      <option value="$PROJECT_DIR$/Pages/OpdrachtControle.cshtml" />
-      <option value="$PROJECT_DIR$/Pages/TriageHomepagina.cshtml" />
       <option value="$PROJECT_DIR$/Pages/StatestiekenPagina.cshtml" />
-      <option value="$PROJECT_DIR$/Pages/OpdrachtAanvraagControle.cshtml" />
-      <option value="$PROJECT_DIR$/wwwroot/css/TriagePagina's.css" />
+      <option value="$PROJECT_DIR$/Pages/StatistiekenPagina.cshtml" />
+      <option value="$PROJECT_DIR$/Pages/StatistiekenPagina.cshtml.cs" />
+      <option value="$PROJECT_DIR$/Pages/Shared/homepagestudent.html" />
+      <option value="$PROJECT_DIR$/Pages/OndernemerRegistratie.cshtml" />
+      <option value="$PROJECT_DIR$/Repository/TriageRepository.cs" />
       <option value="$PROJECT_DIR$/Models/Gebruiker.cs" />
       <option value="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml.cs" />
-      <option value="$PROJECT_DIR$/Repository/TriageRepository.cs" />
+      <option value="$PROJECT_DIR$/Pages/Statestieken.cshtml" />
+      <option value="$PROJECT_DIR$/Pages/Statistieken.cshtml.cs" />
+      <option value="$PROJECT_DIR$/Pages/OpdrachtAanvraagControle.cshtml" />
+      <option value="$PROJECT_DIR$/Pages/Shared/_Triage.cshtml" />
+      <option value="$PROJECT_DIR$/Pages/OpdrachtControle.cshtml" />
+      <option value="$PROJECT_DIR$/wwwroot/css/TriagePagina's.css" />
+      <option value="$PROJECT_DIR$/Pages/StudentRegistratie.cshtml.cs" />
       <option value="$PROJECT_DIR$/Pages/StudentAanvraagControle.cshtml" />
+      <option value="$PROJECT_DIR$/Pages/Statistieken.cshtml" />
+      <option value="$PROJECT_DIR$/Pages/TriageHomepagina.cshtml" />
+      <option value="$PROJECT_DIR$/Pages/Index.cshtml" />
+      <option value="$PROJECT_DIR$/Pages/Error.cshtml" />
+      <option value="$PROJECT_DIR$/Pages/Aanvragen.cshtml" />
+      <option value="$PROJECT_DIR$/Pages/_ViewStart.cshtml" />
+      <option value="$PROJECT_DIR$/Pages/Privacy.cshtml" />
+      <option value="$PROJECT_DIR$/Pages/OpdrachtAanvraagControle.cshtml.cs" />
+      <option value="$PROJECT_DIR$/Helpers/SessionHelper.cs" />
+      <option value="$PROJECT_DIR$/Pages/Aanvragen.cshtml.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sezNQD3TnDv01piqeheZioAKt2" />
@@ -138,20 +137,22 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3502052" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.45759234" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.38323355" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="RiderIisExpressOptionsPageId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.DWF">
+  <component name="RunManager" selected=".NET Launch Settings Profile.DWF: IIS Express">
     <configuration name="DWF" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/DWF.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
@@ -190,7 +191,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7610b83c-5f91-45b4-a754-9794536663c0" name="Default Changelist" comment="" />
+      <changelist id="2bd2a50b-6c32-4c8d-9c60-f445c1a941a9" name="Default Changelist" comment="" />
       <created>1621247802479</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -203,6 +204,9 @@
       <workItem from="1621771179083" duration="443000" />
       <workItem from="1621771644251" duration="607000" />
       <workItem from="1621772266163" duration="354000" />
+      <workItem from="1621794801040" duration="17000" />
+      <workItem from="1621843171015" duration="12566000" />
+      <workItem from="1621862303718" duration="748000" />
     </task>
     <task id="LOCAL-00001" summary="database connection string">
       <created>1621249413005</created>
@@ -279,6 +283,6 @@
     <MESSAGE value="j" />
     <MESSAGE value="Triage omgeving voor een groot deel werkend" />
     <MESSAGE value="database update" />
-    <option name="LAST_COMMIT_MESSAGE" value="database update" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
