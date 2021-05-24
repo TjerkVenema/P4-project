@@ -19,7 +19,18 @@ namespace triage.Pages
 
         public void OnGet()
         {
+            [AllowAnonymous]
+            public IActionResult Index()
+            {
+                var shouldShowOtherHomePage = ...
+                if (shouldShowOtherHomePage) 
+                {
+                    return RedirectToAction("AuthorizedIndex", "OtherController");
+                }
 
+                // code for anonymous users
+                ....
+            }
         }
     }
 }
