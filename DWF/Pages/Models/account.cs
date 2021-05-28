@@ -4,14 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using DWF;
 
-namespace account.Models
+namespace DWF.Pages.Models
 {
-    public class Account : database
+    public class Account 
     {
         public string Email { get; set; }
 
         public string Password { get; set; }
-
-        public bool Admin_Permission { get; set; }
     }
-}
+}    

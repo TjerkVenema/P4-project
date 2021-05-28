@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace triage.Pages
+namespace DWF.Pages
 {
     public class IndexModel : PageModel
     {
@@ -15,22 +15,6 @@ namespace triage.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-        }
-
-        public void OnGet()
-        {
-            [AllowAnonymous]
-            public IActionResult Index()
-            {
-                var shouldShowOtherHomePage = ...
-                if (shouldShowOtherHomePage) 
-                {
-                    return RedirectToAction("AuthorizedIndex", "OtherController");
-                }
-
-                // code for anonymous users
-                ....
-            }
         }
     }
 }

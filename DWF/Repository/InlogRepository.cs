@@ -27,5 +27,16 @@ namespace DWF.Repository
                 return true;
             }
         }
+
+        public static int GetUserID(string email)
+        {
+            using var connectie = repository.Connect();
+
+            var id = connectie.QuerySingle <int>("SELECT gebruiker_id FROM gebruikers WHERE email = @email",
+                param: new {@email = email});
+            return id;
+            
+        }
+
     }
 }

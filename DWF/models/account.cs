@@ -1,4 +1,4 @@
-﻿namespace AccountNamespace
+﻿namespace Account.models
 {
     public class Account
    {
