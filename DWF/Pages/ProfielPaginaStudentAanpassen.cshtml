@@ -1,0 +1,72 @@
+@page
+@model DWF.Pages.ProfielPaginaStudentAanpassen
+
+@{
+    Layout = "Shared/_Student";
+}
+
+<!DOCTYPE html>
+
+<html lang="nl">
+<head>
+    <title></title>
+    <link href="@Url.Content("~/css/Student.css")" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <a href="/ProfielPaginaStudent" class="btn btn-secondary" id="fixedbutton">Terug</a>
+    <div class="row">
+        <div class="col-12">
+            <h1 class="kop">Uw gegevens aanpassen</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+
+        <div class="col-6">
+            <form method="post">
+                <div class="form-group">
+                    <label class="form-label">huidige naam: @Model.Gebruiker.naam</label>
+                    <div class="d-flex flex-nowrap">
+                        <input placeholder="nieuwe voornaam" class="form-control" type="text" asp-for="voornaam">
+                        <input placeholder="nieuwe achternaam" class="form-control" type="text" asp-for="achternaam">
+                    </div>
+                    <span asp-validation-for="voornaam" class="text-danger"></span><br>
+                    <span asp-validation-for="achternaam" class="text-danger"></span>
+                </div>
+                <div class="ruimte form-group">
+                    <label class="form-label">huidig email adres: @Model.Gebruiker.email</label>
+                    <input placeholder="nieuw email adres" class="form-control" type="text" asp-for="email">
+                    <span asp-validation-for="email" class="text-danger"></span>
+                </div>
+                <div class="text-danger">@Model.Bericht</div>
+                <div class="ruimte form-group">
+                    <label class="form-label">nieuw opleidingsniveau</label>
+                    <select asp-for="opleiding" class="form-select form-control">
+                        <option value="@null">Selecteer een nieuwe opleiding</option>
+                        <option value="MBO">MBO</option>
+                        <option value="HBO">HBO</option>
+                        <option value="Universiteit">Universiteit</option>
+                    </select>
+                </div>
+
+                <div class="ruimte form-group">
+                    <label class="form-label">nieuw wachtwoord</label>  
+                    <input placeholder="nieuw wachtwoord" class="form-control" type="password" asp-for="wachtwoord">
+                    <label class="form-label">Uw wachtwoord moet minimaal 8 en maximaal 16 characters lang zijn, 1 hoofdletter en 1 cijfer bevatten</label>
+                    <span asp-validation-for="wachtwoord" class="text-danger"></span>
+                </div>
+                <div class="ruimte">
+                    <button type="submit" asp-page-handler="Pasaan" class="btn btn-primary">aanpassen</button>
+                </div>
+                
+            </form>
+        </div>
+
+        <div class="col-4"></div>
+
+        <div class="col-1"></div>
+    </div>
+</div>
+</body>
+</html>

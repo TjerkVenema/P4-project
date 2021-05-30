@@ -14,10 +14,16 @@ namespace DWF.Models
         
         public string naam { get; set; }
         
+        public string voornaam { get; set; }
+        
+        public string achternaam { get; set; }
+        
         public string email { get; set; }
         
-        public opleidings_niveau opleiding { get; set; }
+        public string opleiding { get; set; }
         
         public string zakelijknummer { get; set; }
+        
+        public string wachtwoord { get; set; }
     }
 }

@@ -1,0 +1,48 @@
+@page
+@using DWF.Models
+@model DWF.Pages.ProfielPaginaStudent
+
+@{
+    Layout = "Shared/_Student";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <link href="@Url.Content("~/css/Student.css")" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <a href="/ProfielPaginaStudentAanpassen" class="btn btn-secondary" id="fixedbutton">Aanpassen</a>
+    <div class="row">
+        <div class="col-12">
+            <h1 class="kop">Uw profielpagina</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+
+        <div class="col-6">
+            <div>
+                <label class="form-label">naam</label>
+                <h3>@Model.Gebruiker.naam</h3>
+            </div>
+            <div class="ruimteboven">
+                <label class="form-label">email</label>
+                <h3>@Model.Gebruiker.email</h3>
+            </div>
+            <div class="ruimteboven">
+                <label class="form-label">opleiding</label>
+                <h3>@Model.Gebruiker.opleiding</h3>
+            </div>
+        </div>
+
+        <div class="col-4"></div>
+
+        <div class="col-1"></div>
+    </div>
+</div>
+</body>
+</html>

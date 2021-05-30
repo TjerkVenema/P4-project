@@ -32,9 +32,8 @@ namespace DWF.Pages
                 if (InlogRepository.Login(Email, Password))
                 {
                     int id = InlogRepository.GetUserID(Email);
-                    //HttpContext.Session.SetObjectAsJson("ID", id);
-                    Response.Cookies.Append("id",id.ToString());
-                    Response.Redirect("/", permanent: true);
+                    HttpContext.Session.SetObjectAsJson("ID", id);
+                    Response.Redirect("/ProfielPaginaStudent");
                 }
                 else
                 {
