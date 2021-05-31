@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DWF.Helpers;
 
 namespace DWF.Pages
 {
@@ -15,6 +16,11 @@ namespace DWF.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
+        }
+
+        public void OnGet()
+        {
+            HttpContext.Session.Remove("ID");
         }
     }
 }

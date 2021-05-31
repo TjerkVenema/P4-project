@@ -1,0 +1,19 @@
+.kop{
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.ruimteboven{
+    padding-top: 10%;
+}
+
+#fixedbutton {
+    position: fixed;
+    bottom: 10%;
+    right: 1%;
+    width: 200px;
+}
+
+.ruimte{
+    padding-top: 20px;
+}
