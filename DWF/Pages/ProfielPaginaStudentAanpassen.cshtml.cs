@@ -89,7 +89,8 @@ namespace DWF.Pages
         
         public void OnGet()
         {
-            Gebruiker = StudentRepository.GetStudent(26);
+            int id = HttpContext.Session.GetObjectFromJson<int>("ID");
+            Gebruiker = StudentRepository.GetStudent(id);
         }
     }
 }
