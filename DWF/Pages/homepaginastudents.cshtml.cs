@@ -2,7 +2,7 @@
 
 namespace DWF.Pages
 {
-    public class homepaginastudents : PageModel
+    public class Homepaginastudents : PageModel
     {
         public void OnGet()
         {
