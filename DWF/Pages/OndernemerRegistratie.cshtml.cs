@@ -8,6 +8,12 @@ namespace DWF.Pages
 {
     public class OndernemerRegistratie : PageModel
     {
+        [BindProperty, Required(ErrorMessage = "Voer alstublieft uw KvK nummer in.")] 
+        public int? ZakelijkNummer { get; set; }
+        
+        [BindProperty, Required(ErrorMessage = "Voer alstublieft uw bedrijfsnaam in.")]
+        public string BedrijfsNaam { get; set; }
+        
         [BindProperty, Required(ErrorMessage = "Voer alstublieft een geldig e-mailadres in."),
          EmailAddress(ErrorMessage = "Voer alstublieft een geldig e-mailadres in.")]
         public string Email { get; set; }
@@ -20,9 +26,6 @@ namespace DWF.Pages
         
         [BindProperty, Required(ErrorMessage = "Voer alstublieft uw achternaam in.")]
         public string Achternaam { get; set; }
-
-        [BindProperty, Required] 
-        public int? ZakelijkNummer { get; set; }
 
         public string Bericht { get; set; }
 
@@ -38,8 +41,7 @@ namespace DWF.Pages
             bool isDubbel = RegistratieRepository.Isdubbel(Email);
             if (ModelState.IsValid && !isDubbel)
             {
-                int gebruiker = registratieRepository.CreateAccount(Email, Wachtwoord, Voornaam, Achternaam, null,
-                        ZakelijkNummer);
+                int gebruiker = registratieRepository.CreateAccount(Email, Wachtwoord, Voornaam, Achternaam, null, ZakelijkNummer, BedrijfsNaam, null);
                     string doel = String.Format("/{0}", gebruiker);
                     Response.Redirect(doel, permanent: true);
             }

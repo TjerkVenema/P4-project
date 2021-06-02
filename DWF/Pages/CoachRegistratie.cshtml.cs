@@ -20,6 +20,9 @@ namespace DWF.Pages
         
         [BindProperty, Required(ErrorMessage = "Voer alstublieft uw achternaam in.")]
         public string Achternaam { get; set; }
+        
+        [BindProperty, Required]
+        public string School { get; set; }
 
         public string Bericht { get; set; }
 
@@ -36,7 +39,7 @@ namespace DWF.Pages
             if (ModelState.IsValid && !isDubbel)
             {
                 int gebruiker = registratieRepository.CreateAccount(Email, Wachtwoord, Voornaam, Achternaam, null,
-                    null);
+                    null, null, School);
                 string doel = String.Format("/{0}", gebruiker);
                 Response.Redirect(doel, permanent: true);
             }
