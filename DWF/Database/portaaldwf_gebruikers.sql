@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.23, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: portaaldwf
 -- ------------------------------------------------------
--- Server version	8.0.23
+-- Server version	8.0.25
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,12 +28,23 @@ CREATE TABLE `gebruikers` (
   `voornaam` varchar(100) NOT NULL,
   `achternaam` varchar(100) NOT NULL,
   `wachtwoord` varchar(100) NOT NULL,
-  `opleiding` enum('MBO','HBO','Universiteit') DEFAULT NULL,
+  `opleiding` enum('MBO','HBO','Universiteit','Anders') DEFAULT NULL,
   `zakelijkNummer` int DEFAULT NULL,
+  `bedrijfsnaam` varchar(100) DEFAULT NULL,
+  `school` enum('NHL','FriesePoort','FrieslandCollege','Anders') DEFAULT NULL,
   PRIMARY KEY (`gebruiker_id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gebruikers`
+--
+
+LOCK TABLES `gebruikers` WRITE;
+/*!40000 ALTER TABLE `gebruikers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `gebruikers` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -44,4 +55,4 @@ CREATE TABLE `gebruikers` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-23 20:16:56
+-- Dump completed on 2021-06-02 21:21:32
