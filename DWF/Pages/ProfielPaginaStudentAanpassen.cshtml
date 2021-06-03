@@ -25,36 +25,50 @@
 
         <div class="col-6">
             <form method="post">
-                <div class="form-group">
-                    <label class="form-label">huidige naam: @Model.Gebruiker.naam</label>
-                    <div class="d-flex flex-nowrap">
-                        <input placeholder="nieuwe voornaam" class="form-control" type="text" asp-for="voornaam">
-                        <input placeholder="nieuwe achternaam" class="form-control" type="text" asp-for="achternaam">
-                    </div>
-                    <span asp-validation-for="voornaam" class="text-danger"></span><br>
-                    <span asp-validation-for="achternaam" class="text-danger"></span>
-                </div>
-                <div class="ruimte form-group">
-                    <label class="form-label">huidig email adres: @Model.Gebruiker.email</label>
-                    <input placeholder="nieuw email adres" class="form-control" type="text" asp-for="email">
-                    <span asp-validation-for="email" class="text-danger"></span>
-                </div>
-                <div class="text-danger">@Model.Bericht</div>
                 <div class="ruimte form-group">
                     <label class="form-label">nieuw opleidingsniveau</label>
-                    <select asp-for="opleiding" class="form-select form-control">
-                        <option value="@null">Selecteer een nieuwe opleiding</option>
+                    <select asp-for="opleidingsniveau" class="form-select form-control">
+                        <option value="@null">Selecteer een nieuw opleidingsniveau</option>
                         <option value="MBO">MBO</option>
                         <option value="HBO">HBO</option>
                         <option value="Universiteit">Universiteit</option>
+                        <option value="Anders">Anders</option>
                     </select>
                 </div>
-
+                <div class="form-group ruimte">
+                    <label class="form-label">Opleiding aanpassen</label>
+                    <select asp-for="opleiding" class="form-select form-control">
+                        <option value="@null">Selecteer een nieuwe opleiding</option>
+                        <option value="ICT">ICT</option>
+                        <option value="ITSM">ITSM</option>
+                        <option value="CMD">CMD</option>
+                        <option value="dummy1">lorem1</option>
+                        <option value="dummy2">lorem2</option>
+                        <option value="dummy3">lorem3</option>
+                        <option value="dummy4">lorem4</option>
+                        <option value="dummy5">lorem5</option>
+                        <option value="dummy6">lorem6</option>
+                    </select>
+                </div>
                 <div class="ruimte form-group">
-                    <label class="form-label">nieuw wachtwoord</label>  
-                    <input placeholder="nieuw wachtwoord" class="form-control" type="password" asp-for="wachtwoord">
+                    <label class="form-label">Studiejaar</label>
+                    <select asp-for="studiejaar" class="form-select form-control">
+                        <option value="0">Selecteer een nieuw studiejaar</option>
+                        <option value="1">Jaar 1</option>
+                        <option value="2">Jaar 2</option>
+                        <option value="3">Jaar 3</option>
+                        <option value="4">Jaar 4</option>
+                    </select>
+                </div>
+                <div class="ruimte form-group">
+                    <label class="form-label">Wachtwoord opnieuw instellen</label>  
+                    <div class="d-flex flex-nowrap">
+                        <input placeholder="oud wachtwoord" class="form-control" type="password" asp-for="wachtwoordcheck">
+                        <input placeholder="nieuw wachtwoord" class="form-control" type="password" asp-for="wachtwoord">
+                    </div>
                     <label class="form-label">Uw wachtwoord moet minimaal 8 en maximaal 16 characters lang zijn, 1 hoofdletter en 1 cijfer bevatten</label>
                     <span asp-validation-for="wachtwoord" class="text-danger"></span>
+                    <div class="text-danger">@Model.Bericht</div>
                 </div>
                 <div class="ruimte">
                     <button type="submit" asp-page-handler="Pasaan" class="btn btn-primary">aanpassen</button>

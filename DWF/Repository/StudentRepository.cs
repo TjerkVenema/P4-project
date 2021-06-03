@@ -26,16 +26,29 @@ namespace DWF.Repository
         {
             using var connectie = repository.Connect();
             connectie.Execute(
-                "UPDATE gebruikers SET email = @Email, voornaam = @Voornaam, achternaam = @Achternaam, wachtwoord = @Wachtwoord, opleiding = @Opleiding WHERE gebruiker_id = @gebruikerId",
+                "UPDATE gebruikers SET wachtwoord = @Wachtwoord, opleiding = @Opleiding, opleidingsniveau = @opleidingsniveau, studiejaar = @Studiejaar WHERE gebruiker_id = @gebruikerId",
                 new
                 {
                     gebruikerId = gebruiker.gebruiker_id,
-                    Email = gebruiker.email,
-                    Voornaam = gebruiker.voornaam,
-                    Achternaam = gebruiker.achternaam,
                     Wachtwoord = gebruiker.wachtwoord,
-                    Opleiding = gebruiker.opleiding
+                    Opleiding = gebruiker.opleiding,
+                    opleidingsniveau = gebruiker.opleidingsNiveau,
+                    Studiejaar = gebruiker.studiejaar
                 });
+        }
+
+        public static void AddFilters(int id, string Opleiding, int jaar)
+        {
+            using var connectie = repository.Connect();
+            connectie.Execute(
+                "UPDATE gebruikers SET opleiding = @opleiding, studiejaar = @studiejaar WHERE gebruiker_id = @gebruikers_id",
+                new
+                {
+                    opleiding = Opleiding,
+                    studiejaar = jaar,
+                    gebruikers_id = id
+                });
+
         }
     }
 }

@@ -15,6 +15,10 @@ namespace DWF.Pages
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
             Gebruiker = StudentRepository.GetStudent(id);
+            if (Gebruiker.opleiding == null)
+            {
+                Response.Redirect("/FiltersToevoegen");
+            }
         }
     }
 }
