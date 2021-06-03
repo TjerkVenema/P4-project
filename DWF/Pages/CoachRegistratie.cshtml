@@ -50,14 +50,25 @@
           <span asp-validation-for="Voornaam" class="text-danger"></span>
         </div>
     
-        <div class="form-group">
-          <label for="achternaamInput" class="form-label">Achternaam</label>
-          <input type="text" asp-for="Achternaam"
-                 id="achternaamInput"
-                 class="form-control"
-                 required>
-          <span asp-validation-for="Achternaam" class="text-danger"></span>
-        </div>
+    <div class="form-group">
+      <label for="achternaamInput" class="form-label">Achternaam</label>
+      <input type="text" asp-for="Achternaam"
+             id="achternaamInput"
+             class="form-control"
+             required>
+      <span asp-validation-for="Achternaam" class="text-danger"></span>
+    </div>
+    
+        <div class="input-group">
+              <label for="schoolDropdown" class="form-label">School</label>
+              @Html.DropDownListFor(model => model.School, new List<SelectListItem>
+              {
+                new SelectListItem {Text = "NHLStenden", Value = "NHL"},
+                new SelectListItem {Text = "ROC Friese Poort", Value = "FriesePoort"},
+                new SelectListItem {Text = "ROC Friesland College", Value = "FrieslandCollege"},
+                new SelectListItem {Text = "Anders...", Value = "Anders"}
+              }, new {@id = "schoolDropdown"})
+            </div>
 
     <div class="text-danger">@Model.Bericht</div>
 
