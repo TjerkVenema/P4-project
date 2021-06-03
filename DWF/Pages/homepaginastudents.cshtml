@@ -2,6 +2,8 @@
 @model DWF.Pages.Homepaginastudents
 
 @{
+    var db = DWF.open ("opdrachten"); 
+    var selectQueryString = "SELECT * FROM opdrachten ORDER BY Id";     
     
 }
 

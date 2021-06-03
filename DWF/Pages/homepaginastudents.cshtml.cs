@@ -6,7 +6,10 @@ namespace DWF.Pages
     {
         public void OnGet()
         {
-            
+
         }
+
+        public void Onpost()
+
     }
 }

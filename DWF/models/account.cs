@@ -1,4 +1,4 @@
-﻿namespace Account.models
+﻿namespace DWF.Pages.Models
 {
     public class Account
    {
