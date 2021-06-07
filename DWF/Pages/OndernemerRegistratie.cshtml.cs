@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using DWF.Helpers;
 using DWF.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -42,8 +43,8 @@ namespace DWF.Pages
             if (ModelState.IsValid && !isDubbel)
             {
                 int gebruiker = registratieRepository.CreateAccount(Email, Wachtwoord, Voornaam, Achternaam, null, ZakelijkNummer, BedrijfsNaam, null);
-                    string doel = String.Format("/{0}", gebruiker);
-                    Response.Redirect(doel, permanent: true);
+                HttpContext.Session.SetObjectAsJson("ID", gebruiker);
+                Response.Redirect("/ProfielPaginaStudent");
             }
             else
             {
