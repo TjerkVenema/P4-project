@@ -1,0 +1,73 @@
+@page
+@using Org.BouncyCastle.Asn1.Cms
+@model DWF.Pages.InschrijvenStudent
+
+@{
+    Layout = "Shared/_Student";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <link href="@Url.Content("~/css/Student.css")" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="kop">Inschrijven</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        
+        <div class="col-4">
+            <form method="post">
+                <div class="ruimte form-group">
+                    <label class="form-label">Wil je deze opdracht doen voor studiepunten?</label>
+                    <div class="d-flex flex-nowrap">
+                        <button class="btn btn-primary form-control">Ja</button>
+                        <button class="btn btn-primary form-control">Nee</button> 
+                    </div>
+                    
+                </div>
+                
+                <div class="ruimte form-group">
+                    <label>In welke periode ben je beschikbaar?</label>
+                    <div class="d-flex flex-nowrap">
+                        <input type="date" class="form-control" asp-for="Datumvan">
+                        <input type="date" class="form-control" asp-for="Datumtot">
+                    </div>
+                </div>
+                
+                <div class="ruimte form-group">
+                    <label class="form-label">Hoeveel uur ben je beschikbaar voor deze opdracht?</label>
+                    <select asp-for="uurbeschikbaar" class="form-select form-control">
+                        <option value="0 - 4">4 uur of minder</option>
+                        <option value="4 - 8">4 - 8 uur</option>
+                        <option value="8 - 16">8 - 16 uur</option>
+                        <option value="16 - 24">16 - 24 uur</option>
+                        <option value="24 - 32">24 - 32 uur</option>
+                        <option value="32 - 40">32 - 40 uur</option>
+                    </select>
+                </div>
+                
+                <div class="ruimte form-group">
+                    <label class="form-label">Waarom wilt u deze opdracht doen?</label>
+                    <input placeholder="Beschrijving" class="form-control ruimtevoorbeschrijving" type="text" asp-for="beschrijving">
+                </div>
+                
+                <div class="ruimte form-group">
+                    <button class="btn btn-primary" type="submit" asp-page-handler="Inschrijven">Inschrijven</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-4"></div>
+    </div>
+</div>
+</body>
+</html>
