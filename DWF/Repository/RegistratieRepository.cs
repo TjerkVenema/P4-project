@@ -7,12 +7,12 @@ namespace DWF.Repository
     {
         public static Repository repository = new Repository();
 
-        public int CreateAccount(string email, string wachtwoord, string voornaam, string achternaam, string opleiding, int? zakelijkNummer, string bedrijfsnaam, string school)
+        public int CreateAccount(string email, string wachtwoord, string voornaam, string achternaam, string opleidingsNiveau, int? zakelijkNummer, string bedrijfsnaam, string school)
         {
             using var connectie = repository.Connect();
             var numRowEffected = connectie.Execute(
-                "INSERT INTO gebruikers (email, wachtwoord, voornaam, achternaam, opleiding, zakelijknummer, bedrijfsnaam, school) VALUES (@Email, @Wachtwoord, @Voornaam, @Achternaam, @Opleiding, @ZakelijkNummer, @Bedrijfsnaam, @School)",
-                param: new {Email = email, Wachtwoord = wachtwoord, Voornaam = voornaam, Achternaam = achternaam, Opleiding = opleiding , ZakelijkNummer = zakelijkNummer, Bedrijfsnaam = bedrijfsnaam, School = school });
+                "INSERT INTO gebruikers (email, wachtwoord, voornaam, achternaam, opleidingsniveau, zakelijknummer, bedrijfsnaam, school) VALUES (@Email, @Wachtwoord, @Voornaam, @Achternaam, @OpleidingsNiveau, @ZakelijkNummer, @Bedrijfsnaam, @School)",
+                param: new {Email = email, Wachtwoord = wachtwoord, Voornaam = voornaam, Achternaam = achternaam, OpleidingsNiveau = opleidingsNiveau , ZakelijkNummer = zakelijkNummer, Bedrijfsnaam = bedrijfsnaam, School = school });
             var gebruikerId = connectie.QuerySingle("SELECT LAST_INSERT_ID();");
             
             int numeric_id = 0;

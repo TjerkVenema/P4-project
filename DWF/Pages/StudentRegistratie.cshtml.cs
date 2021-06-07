@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
+using DWF.Models;
 using DWF.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -25,7 +26,7 @@ namespace DWF.Pages
         public string Achternaam { get; set; }
         
         [BindProperty, Required]
-        public string Opleiding { get; set; }
+        public string OpleidingsNiveau { get; set; }
         
         [BindProperty, Required]
         public string School { get; set; }
@@ -44,7 +45,7 @@ namespace DWF.Pages
             bool isDubbel = RegistratieRepository.Isdubbel(Email);
             if (ModelState.IsValid && !isDubbel)
             {
-                int gebruiker = registratieRepository.CreateAccount(Email, Wachtwoord, Voornaam, Achternaam, Opleiding,
+                int gebruiker = registratieRepository.CreateAccount(Email, Wachtwoord, Voornaam, Achternaam, OpleidingsNiveau,
                     null, null, School);
                 string doel = String.Format("/{0}", gebruiker);
                 Response.Redirect(doel, permanent: true);

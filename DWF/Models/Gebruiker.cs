@@ -4,12 +4,6 @@ namespace DWF.Models
 {
     public class Gebruiker
     {
-        public enum opleidings_niveau
-        {
-            MBO,
-            HBO,
-            Universiteit
-        }
         public int gebruiker_id { get; set; }
         
         public string naam { get; set; }
@@ -20,7 +14,13 @@ namespace DWF.Models
         
         public string email { get; set; }
         
+        public string opleidingsNiveau { get; set; }
+        
         public string opleiding { get; set; }
+        
+        public string school { get; set; }
+        
+        public int studiejaar { get; set; }
         
         public string zakelijknummer { get; set; }
         
