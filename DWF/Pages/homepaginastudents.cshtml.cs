@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using DWF.Repository;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DWF.Pages
 {
@@ -6,10 +7,13 @@ namespace DWF.Pages
     {
         public void OnGet()
         {
-
+            StudentRepository
         }
 
         public void Onpost()
+        {
+            
+        }
 
     }
 }

@@ -2,8 +2,6 @@
 @model DWF.Pages.Homepaginastudents
 
 @{
-    var db = DWF.open ("opdrachten"); 
-    var selectQueryString = "SELECT * FROM opdrachten ORDER BY Id";     
     
 }
 
@@ -13,7 +11,7 @@
 </div>
 
 <input type="text" placeholder="zoekopdracht..">
-<p1> Beschikbare taken</p1>
+<p1>Beschikbare taken</p1>
 
 <div class="studentendata">
     {
@@ -24,17 +22,17 @@
         </div>
     }
 <div class="col-md-6">
-    <a> opdracht2</a>
-    <button type="button">bekijk opdracht </button>
+    <a>opdracht2</a>
+    <button type="button">bekijk opdracht</button>
 </div>
     }
 <div class="col-md-6">
-    <a> opdracht3</a>
-    <button type="button">bekijk opdracht </button>
+    <a>opdracht3</a>
+    <button type="button">bekijk opdracht</button>
 </div>
 
 <div class="col-md-6">
-    <a> opdracht4</a>
+    <a>opdracht4</a>
     <button type="button">bekijk opdracht</button>
 </div>
 

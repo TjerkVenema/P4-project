@@ -18,7 +18,7 @@ namespace DWF.Repository
                 });
 
             gebruiker.naam = repository.GetNaam(Id);
-            
+
             return gebruiker;
         }
 
@@ -38,4 +38,12 @@ namespace DWF.Repository
                 });
         }
     }
-}
+
+    {
+            public static void studentopdrachten() 
+            {
+                var db = DWF.Open("@localhost");} 
+                Var selectQueryString = "SELECT * FROM Opdrachten ORDER BY ID";
+        }
+    }
+    
