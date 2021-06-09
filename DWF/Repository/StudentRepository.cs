@@ -48,7 +48,24 @@ namespace DWF.Repository
                     studiejaar = jaar,
                     gebruikers_id = id
                 });
+        }
 
+        public static void AddAanvraag(Aanvragen_student aanvraag)
+        {
+            using var connectie = repository.Connect();
+            connectie.Execute(
+                @"INSERT INTO aanvragen_student(gebruiker_id, opdracht_id, validatie_leeruitkomsten, beschrijving, startdatum, einddatum, beschikbare_uren)
+                     VALUES (@gebruikerId, @opdrachtId, @validatie_leeruitkomsten, @Beschrijving, @startdatum, @einddatum, @beschikbare_uren)",
+            new
+                {
+                    gebruikerId = aanvraag.gebruiker_id,
+                    opdrachtId = aanvraag.opdracht_id,
+                    validatie_leeruitkomsten = aanvraag.validatieLeeruitkomsten,
+                    Beschrijving = aanvraag.beschrijving,
+                    startdatum = aanvraag.startDatum,
+                    einddatum = aanvraag.eindDatum,
+                    beschikbare_uren = aanvraag.beschikbareUren
+                });
         }
     }
 }
