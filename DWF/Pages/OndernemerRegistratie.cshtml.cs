@@ -42,7 +42,7 @@ namespace DWF.Pages
             bool isDubbel = RegistratieRepository.Isdubbel(Email);
             if (ModelState.IsValid && !isDubbel)
             {
-                int gebruiker = registratieRepository.CreateAccount(Email, Wachtwoord, Voornaam, Achternaam, null, ZakelijkNummer, BedrijfsNaam, null);
+                int gebruiker = registratieRepository.CreateAccount(Email, Wachtwoord, Voornaam, Achternaam, null, ZakelijkNummer, BedrijfsNaam, null, "ondernemer");
                 HttpContext.Session.SetObjectAsJson("ID", gebruiker);
                 Response.Redirect("/ProfielPaginaStudent");
             }
