@@ -1,3 +1,7 @@
+using System.ComponentModel.DataAnnotations.Schema;
+using WebMatrix.Data;
+using System.Runtime.InteropServices;
+using System.Threading.Tasks.Dataflow;
 using Dapper;
 using DWF.Models;
 
@@ -40,10 +44,12 @@ namespace DWF.Repository
     }
 
     {
-            public static void studentopdrachten() 
-            {
-                var db = DWF.Open("@localhost");} 
-                Var selectQueryString = "SELECT * FROM Opdrachten ORDER BY ID";
-        }
+    public static void studentopdrachten()
+
+    {
+        var db = Database.Open("portaaldwf");
+
+        var selectQueryString = "SELECT * FROM Opdrachten ORDER BY ID";
+
     }
-    
+    }
