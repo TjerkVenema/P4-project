@@ -15,11 +15,26 @@ namespace DWF.Pages
         [BindProperty]
         public Gebruiker opdrachtgever { get; set; }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            int Id = Convert.ToInt32(Request.Cookies["OpdrachtAanvraagId"]);
-            opdrachtaanvraag = TriageRepository.GetOpdrachtAanvraag(Id);  
-            opdrachtgever = TriageRepository.GetGebruiker(opdrachtaanvraag.gebruiker_id);
+            int id = HttpContext.Session.GetObjectFromJson<int>("ID");
+            string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            if (id != 0 && rol == "triage")
+            {
+                int Id = Convert.ToInt32(Request.Cookies["OpdrachtAanvraagId"]);
+                if (Id == 0)
+                {
+                    return RedirectToPage("/TriageHomepagina");
+                }
+                opdrachtaanvraag = TriageRepository.GetOpdrachtAanvraag(Id); 
+                opdrachtgever = TriageRepository.GetGebruiker(opdrachtaanvraag.gebruiker_id);
+                return Page();
+            }
+            else if (id != 0 && rol == "student")
+            {
+                return RedirectToPage("/ProfielPaginaStudent");
+            }
+            return RedirectToPage("/Index");
         }
 
         public void OnPostJa()

@@ -13,6 +13,9 @@ namespace DWF.Pages
         
         [BindProperty]
         public int studiejaar { get; set; }
+        
+        [BindProperty]
+        public Gebruiker Gebruiker { get; set; }
 
         public void OnPostToevoegen()
         {
@@ -21,9 +24,24 @@ namespace DWF.Pages
             Response.Redirect("/ProfielPaginaStudent");
         }
         
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            
+            int id = HttpContext.Session.GetObjectFromJson<int>("ID");
+            string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            if (id != 0 && rol == "student")
+            {
+                Gebruiker = StudentRepository.GetStudent(id);
+                if (Gebruiker.opleiding == null)
+                {
+                    return Page(); 
+                }
+                return RedirectToPage("/ProfielPaginaStudent");
+            }
+            else if (id != 0 && rol == "triage")
+            {
+                return RedirectToPage("/TriageHomepagina");
+            }
+            return RedirectToPage("/Index");
         }
     }
 }

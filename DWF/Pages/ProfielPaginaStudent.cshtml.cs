@@ -11,14 +11,24 @@ namespace DWF.Pages
         [BindProperty]
         public Gebruiker Gebruiker { get; set; }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
-            Gebruiker = StudentRepository.GetStudent(id);
-            if (Gebruiker.opleiding == null)
+            string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            if (id != 0 && rol == "student")
             {
-                Response.Redirect("/FiltersToevoegen");
+                Gebruiker = StudentRepository.GetStudent(id); 
+                if (Gebruiker.opleiding == null)
+                {
+                    return RedirectToPage("/FiltersToevoegen");
+                }
+                return Page();
             }
+            else if (id != 0 && rol == "triage")
+            {
+                return RedirectToPage("/TriageHomepagina");
+            }
+            return RedirectToPage("/Index");
         }
     }
 }

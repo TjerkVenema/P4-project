@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DWF.Helpers;
 using DWF.Models;
 using DWF.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -34,12 +35,24 @@ namespace DWF.Pages
             Response.Redirect("/OpdrachtAanvraagControle");
         }
         
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            Response.Cookies.Delete("AanvraagId");
-            Response.Cookies.Delete("OpdrachtAanvraagId");
-            aanvragenStudent = TriageRepository.GetAanvragen();
-            opdrachten = TriageRepository.GetOpdrachtenBeoordeling();
+            int id = HttpContext.Session.GetObjectFromJson<int>("ID");
+            string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            if (id != 0 && rol == "triage")
+            {
+               Response.Cookies.Delete("AanvraagId");
+               Response.Cookies.Delete("OpdrachtAanvraagId");
+               aanvragenStudent = TriageRepository.GetAanvragen();
+               opdrachten = TriageRepository.GetOpdrachtenBeoordeling();
+               return Page(); 
+            }
+            else if (id != 0 && rol == "student")
+            {
+                return RedirectToPage("/ProfielPaginaStudent");
+            }
+            return RedirectToPage("/Index");
+            
         }
 
     }
