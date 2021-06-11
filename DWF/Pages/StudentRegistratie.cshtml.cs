@@ -47,7 +47,7 @@ namespace DWF.Pages
             if (ModelState.IsValid && !isDubbel)
             {
                 int gebruiker = registratieRepository.CreateAccount(Email, Wachtwoord, Voornaam, Achternaam, OpleidingsNiveau,
-                    null, null, School);
+                    null, null, School, "student");
                 HttpContext.Session.SetObjectAsJson("ID", gebruiker);
                 Response.Redirect("/ProfielPaginaStudent");
             }
