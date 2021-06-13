@@ -49,7 +49,7 @@ namespace DWF.Repository
     {
         var db = Database.Open("portaaldwf");
 
-        var selectQueryString = "SELECT * FROM Opdrachten ORDER BY ID";
-
+        var selectQueryString = "SELECT * FROM Opdrachten ORDER BY ID",
     }
     }
+}

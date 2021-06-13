@@ -7,7 +7,7 @@ namespace DWF.Pages
     {
         public void OnGet()
         {
-            StudentRepository
+            
         }
 
         public void Onpost()
