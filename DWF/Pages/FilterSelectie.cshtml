@@ -1,0 +1,33 @@
+@page
+@model DWF.Pages.FilterSelectie
+
+@{
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div>
+    <div class="form">
+        <form method="post" novalidate>
+            <div class="input-group">
+                <label for="type" class="form-label">Type vraag</label>
+                @Html.DropDownListFor(model => model.Type, new List<SelectListItem>
+                {
+                    new SelectListItem{Text = "Advies(rapport)", Value = "advies"},
+                    new SelectListItem{Text = "Product", Value = "Product"},
+                    new SelectListItem{Text = "Anders", Value = "anders"}
+                }, new{@id = "type"})
+            </div>
+            
+            <button type="submit" class="btn btn-lg btn-primary">Zoek met geselecteerde filters.</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
