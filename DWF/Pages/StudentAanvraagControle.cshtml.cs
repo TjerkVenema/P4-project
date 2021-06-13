@@ -1,5 +1,6 @@
 using System;
 using Account.models;
+using DWF.Helpers;
 using DWF.Models;
 using DWF.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -15,11 +16,26 @@ namespace DWF.Pages
         [BindProperty]
         public Gebruiker student { get; set; }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            int Id = Convert.ToInt32(Request.Cookies["AanvraagId"]);
-            student = TriageRepository.GetStudentAanvraag(Id);
-            AanvragenStudent = TriageRepository.GetAanvraagById(Id);
+            int id = HttpContext.Session.GetObjectFromJson<int>("ID");
+            string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            if (id != 0 && rol == "triage")
+            {
+                int Id = Convert.ToInt32(Request.Cookies["AanvraagId"]);
+                if (Id == 0)
+                {
+                    return RedirectToPage("/TriageHomepagina");
+                }
+                student = TriageRepository.GetStudentAanvraag(Id);
+                AanvragenStudent = TriageRepository.GetAanvraagById(Id);
+                return Page(); 
+            }
+            else if (id != 0 && rol == "student")
+            {
+                return RedirectToPage("/ProfielPaginaStudent");
+            }
+            return RedirectToPage("/Index");
         }
 
         public void OnPostJa()

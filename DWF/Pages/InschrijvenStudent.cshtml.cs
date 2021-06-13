@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using DWF.Helpers;
 using DWF.Models;
 using DWF.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -33,11 +34,27 @@ namespace DWF.Pages
         [BindProperty]
         public Opdracht Opdracht { get; set; }
         
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            Datumtot = DateTime.Today;
-            Datumvan = DateTime.Today;
-            Opdracht = TriageRepository.GetById(1);
+            int id = HttpContext.Session.GetObjectFromJson<int>("ID");
+            string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            //cookie request met id van de opdracht
+            if (id != 0 && rol == "student")
+            {
+                /*if (opdrachtid == 0)
+                {
+                    return RedirectToPage("homepaginastudents");
+                }*/
+                Datumtot = DateTime.Today; 
+                Datumvan = DateTime.Today;
+                Opdracht = TriageRepository.GetById(1);
+                return Page();
+            }
+            else if (id != 0 && rol == "triage")
+            {
+                return RedirectToPage("/TriageHomepagina");
+            }
+            return RedirectToPage("/Index");
         }
 
         public void OnPostNee()
@@ -79,7 +96,7 @@ namespace DWF.Pages
                 nieuweaanvraag.beschikbareUren = uurbeschikbaar;
                 StudentRepository.AddAanvraag(nieuweaanvraag);
                 Response.Cookies.Delete("studiepunten");
-                Response.Redirect("/Index");
+                Response.Redirect("/ProfielPaginaStudent");
             }
             
             else if (Datumvan < Datumtot && Request.Cookies["studiepunten"] == "Ja")
@@ -102,7 +119,7 @@ namespace DWF.Pages
                 nieuweaanvraag.beschikbareUren = uurbeschikbaar;
                 StudentRepository.AddAanvraag(nieuweaanvraag);
                 Response.Cookies.Delete("studiepunten");
-                Response.Redirect("/Index");
+                Response.Redirect("/ProfielPaginaStudent");
             }
             else if (Datumvan > Datumtot || Datumvan == Datumtot)
             {
@@ -117,7 +134,7 @@ namespace DWF.Pages
         public void OnPostAnulleren()
         {
             Response.Cookies.Delete("studiepunten");
-            Response.Redirect("/Index");
+            Response.Redirect("/ProfielPaginaStudent");
         }
         
     }

@@ -93,10 +93,20 @@ namespace DWF.Pages
             }
         }
         
-        public void OnGet()
+        public IActionResult OnGet()
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
-            Gebruiker = StudentRepository.GetStudent(id);
+            string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            if (id != 0 && rol == "student")
+            {
+                Gebruiker = StudentRepository.GetStudent(id);
+                return Page(); 
+            }
+            else if (id != 0 && rol == "triage")
+            {
+                return RedirectToPage("/TriageHomepagina");
+            }
+            return RedirectToPage("/Index");
         }
     }
 }

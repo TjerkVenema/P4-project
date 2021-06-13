@@ -36,9 +36,23 @@ namespace DWF.Pages
 
         public RegistratieRepository registratieRepository = new RegistratieRepository();
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            int id = HttpContext.Session.GetObjectFromJson<int>("ID");
+            string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            if (id != 0 && rol != null)
+            {
+                if (rol == "student")
+                {
+                    return RedirectToPage("/ProfielPaginaStudent");
+                }
 
+                if (rol == "triage")
+                {
+                    return RedirectToPage("/TriageHomepagina");
+                }
+            }
+            return Page();
         }
 
         public void OnPost()
@@ -48,7 +62,9 @@ namespace DWF.Pages
             {
                 int gebruiker = registratieRepository.CreateAccount(Email, Wachtwoord, Voornaam, Achternaam, OpleidingsNiveau,
                     null, null, School, "student");
+                string rol = InlogRepository.GetUserRol(Email);
                 HttpContext.Session.SetObjectAsJson("ID", gebruiker);
+                HttpContext.Session.SetObjectAsJson("Rol", rol);
                 Response.Redirect("/ProfielPaginaStudent");
             }
             else

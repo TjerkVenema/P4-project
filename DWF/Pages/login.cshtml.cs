@@ -20,8 +20,23 @@ namespace DWF.Pages
 
         public string Msg { get; set; }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            int id = HttpContext.Session.GetObjectFromJson<int>("ID");
+            string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            if (id != 0 && rol != null)
+            {
+                if (rol == "student")
+                {
+                    return RedirectToPage("/ProfielPaginaStudent");
+                }
+
+                if (rol == "triage")
+                {
+                    return RedirectToPage("/TriageHomepagina");
+                }
+            }
+            return Page();
         }
 
 
@@ -32,8 +47,18 @@ namespace DWF.Pages
                 if (InlogRepository.Login(Email, Password))
                 {
                     int id = InlogRepository.GetUserID(Email);
+                    string rol = InlogRepository.GetUserRol(Email);
                     HttpContext.Session.SetObjectAsJson("ID", id);
-                    Response.Redirect("/ProfielPaginaStudent");
+                    HttpContext.Session.SetObjectAsJson("Rol", rol);
+                    if (rol == "student")
+                    {
+                        Response.Redirect("/ProfielPaginaStudent");
+                    }
+                    else if (rol == "triage")
+                    {
+                        Response.Redirect("/TriageHomepagina");
+                    }
+                    
                 }
                 else
                 {

@@ -21,6 +21,7 @@ namespace DWF.Pages
         public void OnGet()
         {
             HttpContext.Session.Remove("ID");
+            HttpContext.Session.Remove("Rol");
         }
     }
 }
