@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.23, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: portaaldwf
 -- ------------------------------------------------------
--- Server version	8.0.23
+-- Server version	8.0.25
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,17 +26,13 @@ CREATE TABLE `aanvragen_student` (
   `aanvraag_id` int NOT NULL AUTO_INCREMENT,
   `gebruiker_id` int NOT NULL,
   `opdracht_id` int NOT NULL,
-  `validatie_leeruitkomsten` tinyint NOT NULL,
-  `beschrijving` varchar(1000) DEFAULT NULL,
-  `startdatum` datetime NOT NULL,
-  `einddatum` datetime NOT NULL,
-  `beschikbare_uren` varchar(45) NOT NULL,
+  `beschrijving` varchar(1000) NOT NULL,
   PRIMARY KEY (`aanvraag_id`),
   KEY `aanvragen_student_ibfk_1_idx` (`gebruiker_id`),
   KEY `aanvragen_student_ibfk_2_idx` (`opdracht_id`),
   CONSTRAINT `aanvragen_student_ibfk_1` FOREIGN KEY (`gebruiker_id`) REFERENCES `gebruikers` (`gebruiker_id`),
   CONSTRAINT `aanvragen_student_ibfk_2` FOREIGN KEY (`opdracht_id`) REFERENCES `opdrachten` (`opdracht_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +41,6 @@ CREATE TABLE `aanvragen_student` (
 
 LOCK TABLES `aanvragen_student` WRITE;
 /*!40000 ALTER TABLE `aanvragen_student` DISABLE KEYS */;
-INSERT INTO `aanvragen_student` VALUES (6,36,1,1,NULL,'2021-06-11 00:00:00','2021-06-22 00:00:00','24 - 32'),(7,36,1,0,'ik wil geld','2021-06-11 00:00:00','2021-07-08 00:00:00','0 - 4'),(8,36,1,0,'ik wil geld','2021-06-11 00:00:00','2021-06-29 00:00:00','24 - 32'),(9,36,1,0,'ik wil geld','2021-06-11 00:00:00','2021-06-30 00:00:00','0 - 4'),(10,36,1,1,NULL,'2021-06-11 00:00:00','2021-06-17 00:00:00','0 - 4');
 /*!40000 ALTER TABLE `aanvragen_student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-11 14:03:42
+-- Dump completed on 2021-06-14  9:36:07
