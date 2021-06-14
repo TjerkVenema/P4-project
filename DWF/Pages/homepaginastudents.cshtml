@@ -1,41 +1,44 @@
 ﻿@page
-@model DWF.Pages.homepaginastudents
+@using WebMatrix.Data
+@model DWF.Pages.Homepaginastudents
 
 @{
-    Layout = "Shared/_Student";
-}
 
-<!DOCTYPE html>
-<div class="border-top">
-    <a class="active" href="#uitloggen">uitloggen</a>
-</div>
-
-<input type="text" placeholder="zoekopdracht..">
-<p1>Beschikbare taken</p1>
-
-<div class="studentendata">
-    
-</div>
+    <!DOCTYPE html>
+    <div class="border-top">
+        <a class="active" href="#uitloggen">uitloggen</a>
+    </div>
+    <br>
+    <br/>
+    <input type="text" placeholder="zoekopdracht..">
+    <br>
+    <br/>
+<p1>Beschikbare taken: </p1>
+    <br>
+    <div class="studentendata">
+    </div>
+    <br>
 <div class="col-md-6">
-    <a> opdracht1</a>
+    <a> opdracht 1</a>
     <button type="button">bekijk opdracht</button>
         </div>
-    
+    <br>
 <div class="col-md-6">
-    <a>opdracht2</a>
+    <a>opdracht 2</a>
     <button type="button">bekijk opdracht</button>
 </div>
-    
+  <br>  
 <div class="col-md-6">
-    <a>opdracht3</a>
+    <a>opdracht 3</a>
     <button type="button">bekijk opdracht</button>
 </div>
-
-<div class="col-md-6">
-    <a>opdracht4</a>
-    <button type="button">bekijk opdracht</button>
-</div>
-<html/>
-
+<br>
+    <div class="col-md-6">
+        <a>opdracht 4</a>
+        <button type="button">bekijk opdracht</button>
+        <br>
+    </div>
+    }
+    <html></html>
 
 

@@ -1,12 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using DWF.Repository;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DWF.Pages
 {
-    public class homepaginastudents : PageModel
+    public class Homepaginastudents : PageModel
     {
         public void OnGet()
         {
             
         }
+
+        public void Onpost()
+        {
+            
+        }
+
     }
 }

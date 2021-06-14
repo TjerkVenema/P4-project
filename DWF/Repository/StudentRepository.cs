@@ -1,3 +1,7 @@
+using System.ComponentModel.DataAnnotations.Schema;
+using WebMatrix.Data;
+using System.Runtime.InteropServices;
+using System.Threading.Tasks.Dataflow;
 using Dapper;
 using DWF.Models;
 
@@ -18,7 +22,7 @@ namespace DWF.Repository
                 });
 
             gebruiker.naam = repository.GetNaam(Id);
-            
+
             return gebruiker;
         }
 
@@ -56,7 +60,7 @@ namespace DWF.Repository
             connectie.Execute(
                 @"INSERT INTO aanvragen_student(gebruiker_id, opdracht_id, validatie_leeruitkomsten, beschrijving, startdatum, einddatum, beschikbare_uren)
                      VALUES (@gebruikerId, @opdrachtId, @validatie_leeruitkomsten, @Beschrijving, @startdatum, @einddatum, @beschikbare_uren)",
-            new
+                new
                 {
                     gebruikerId = aanvraag.gebruiker_id,
                     opdrachtId = aanvraag.opdracht_id,
