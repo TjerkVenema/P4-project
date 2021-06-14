@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.23, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: portaaldwf
 -- ------------------------------------------------------
--- Server version	8.0.23
+-- Server version	8.0.25
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -37,7 +37,7 @@ CREATE TABLE `gebruikers` (
   `studiejaar` int DEFAULT NULL,
   PRIMARY KEY (`gebruiker_id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `gebruikers` (
 
 LOCK TABLES `gebruikers` WRITE;
 /*!40000 ALTER TABLE `gebruikers` DISABLE KEYS */;
-INSERT INTO `gebruikers` VALUES ('triage',36,'ian.bervoets@live.nl','Ian','Bervoets','Test12345','Universiteit',NULL,NULL,NULL,'FrieslandCollege',NULL),('triage',37,'ian.bervoets@live.be','Ian','Bervoets','Test12345',NULL,NULL,NULL,NULL,'FriesePoort',NULL),('student',38,'yolo@yolo.com','hoi','hallo','Test12345','MBO','ICT',NULL,NULL,'NHL',1);
+INSERT INTO `gebruikers` VALUES ('triage',36,'ian.bervoets@live.nl','Ian','Bervoets','Test12345','Universiteit',NULL,NULL,NULL,'FrieslandCollege',NULL),('triage',37,'ian.bervoets@live.be','Ian','Bervoets','Test12345',NULL,NULL,NULL,NULL,'FriesePoort',NULL),('student',38,'ian.bervoets@test.nl','Ian','Bervoets','Test1345','Anders','CMD',NULL,NULL,'Anders',3),('ondernemer',39,'Test.bedrijf@test.nl','Ian','Bervoets','Test12345',NULL,NULL,12345678,'Test co.',NULL,NULL);
 /*!40000 ALTER TABLE `gebruikers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-11 14:03:41
+-- Dump completed on 2021-06-14  9:36:08
