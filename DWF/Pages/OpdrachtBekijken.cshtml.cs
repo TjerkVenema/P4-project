@@ -1,3 +1,4 @@
+using System;
 using DWF.Helpers;
 using DWF.Models;
 using DWF.Repository;
@@ -12,8 +13,7 @@ namespace DWF.Pages
         
         public void OnGet()
         {
-            int id = HttpContext.Session.GetObjectFromJson<int>("opdrachtid");
-            opdracht = TriageRepository.GetById(id);
+            opdracht = TriageRepository.GetById(Convert.ToInt32(Request.Query["opdracht"]));
         }
     }
 }
