@@ -52,7 +52,7 @@ namespace DWF.Pages
                     HttpContext.Session.SetObjectAsJson("Rol", rol);
                     if (rol == "student")
                     {
-                        Response.Redirect("/ProfielPaginaStudent");
+                        Response.Redirect("/homepaginastudents");
                     }
                     else if (rol == "triage")
                     {
