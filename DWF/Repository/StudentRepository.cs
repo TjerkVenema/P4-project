@@ -60,7 +60,7 @@ namespace DWF.Repository
             connectie.Execute(
                 @"INSERT INTO aanvragen_student(gebruiker_id, opdracht_id, validatie_leeruitkomsten, beschrijving, startdatum, einddatum, beschikbare_uren)
                      VALUES (@gebruikerId, @opdrachtId, @validatie_leeruitkomsten, @Beschrijving, @startdatum, @einddatum, @beschikbare_uren)",
-            new
+                new
                 {
                     gebruikerId = aanvraag.gebruiker_id,
                     opdrachtId = aanvraag.opdracht_id,
@@ -71,15 +71,5 @@ namespace DWF.Repository
                     beschikbare_uren = aanvraag.beschikbareUren
                 });
         }
-    }
-
-    {
-    public static void studentopdrachten()
-
-    {
-        var db = Database.Open("portaaldwf");
-
-        var selectQueryString = "SELECT * FROM Opdrachten ORDER BY ID",
-    }
     }
 }
