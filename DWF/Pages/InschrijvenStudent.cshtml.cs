@@ -33,12 +33,12 @@ namespace DWF.Pages
         
         [BindProperty]
         public Opdracht Opdracht { get; set; }
-        
+        public static int opdrachtid;
         public IActionResult OnGet()
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
             string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
-            int opdrachtid = Convert.ToInt32(Request.Query["opdracht"]);
+            opdrachtid = Convert.ToInt32(Request.Query["opdracht"]);
             if (id != 0 && rol == "student")
             {
                 if (opdrachtid == 0)
@@ -60,12 +60,12 @@ namespace DWF.Pages
         public void OnPostNee()
         {
             Response.Cookies.Append("studiepunten", "Nee");
-            Response.Redirect("/InschrijvenStudent");
+            Response.Redirect("/InschrijvenStudent?opdracht=" + opdrachtid);
         }
         public void OnPostJa()
         {
             Response.Cookies.Append("studiepunten", "Ja");
-            Response.Redirect("/InschrijvenStudent");
+            Response.Redirect("/InschrijvenStudent?opdracht=" + opdrachtid);
         }
         
         public void OnPostInschrijven()
