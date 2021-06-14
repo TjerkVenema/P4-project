@@ -38,7 +38,7 @@ namespace DWF.Pages
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
             string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
-            int opdrachtid = HttpContext.Session.GetObjectFromJson<int>("opdrachtid");
+            int opdrachtid = Convert.ToInt32(Request.Query["opdracht"]);
             if (id != 0 && rol == "student")
             {
                 if (opdrachtid == 0)
