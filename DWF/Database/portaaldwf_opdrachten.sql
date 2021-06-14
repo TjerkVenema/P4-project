@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.23, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: portaaldwf
 -- ------------------------------------------------------
--- Server version	8.0.23
+-- Server version	8.0.25
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,6 +29,7 @@ CREATE TABLE `opdrachten` (
   `beschrijving` varchar(1000) NOT NULL,
   `gewenste_opleiding` varchar(50) DEFAULT NULL,
   `opdracht_status` enum('bezig','beschikbaar','afgerond','moet_beoordeeld') DEFAULT NULL,
+  `type` enum('advies','product','anders') NOT NULL,
   PRIMARY KEY (`opdracht_id`),
   KEY `gebruiker_id` (`gebruiker_id`),
   CONSTRAINT `opdrachten_ibfk_1` FOREIGN KEY (`gebruiker_id`) REFERENCES `gebruikers` (`gebruiker_id`)
@@ -41,7 +42,7 @@ CREATE TABLE `opdrachten` (
 
 LOCK TABLES `opdrachten` WRITE;
 /*!40000 ALTER TABLE `opdrachten` DISABLE KEYS */;
-INSERT INTO `opdrachten` VALUES (1,36,'hoi','hoi','HBO','moet_beoordeeld'),(2,37,'hallo','goeie','MBO','moet_beoordeeld');
+INSERT INTO `opdrachten` VALUES (1,36,'hoi','hoi','HBO','moet_beoordeeld','advies'),(2,37,'hallo','goeie','MBO','moet_beoordeeld','advies');
 /*!40000 ALTER TABLE `opdrachten` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-11 14:03:41
+-- Dump completed on 2021-06-14 10:12:44
