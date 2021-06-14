@@ -2,6 +2,8 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
+using DWF.Helpers;
+using DWF.Models;
 using DWF.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -25,15 +27,32 @@ namespace DWF.Pages
         public string Achternaam { get; set; }
         
         [BindProperty, Required]
-        public string Opleiding { get; set; }
+        public string OpleidingsNiveau { get; set; }
+        
+        [BindProperty, Required]
+        public string School { get; set; }
 
         public string Bericht { get; set; }
 
         public RegistratieRepository registratieRepository = new RegistratieRepository();
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            int id = HttpContext.Session.GetObjectFromJson<int>("ID");
+            string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            if (id != 0 && rol != null)
+            {
+                if (rol == "student")
+                {
+                    return RedirectToPage("/ProfielPaginaStudent");
+                }
 
+                if (rol == "triage")
+                {
+                    return RedirectToPage("/TriageHomepagina");
+                }
+            }
+            return Page();
         }
 
         public void OnPost()
@@ -41,10 +60,12 @@ namespace DWF.Pages
             bool isDubbel = RegistratieRepository.Isdubbel(Email);
             if (ModelState.IsValid && !isDubbel)
             {
-                int gebruiker = registratieRepository.CreateAccount(Email, Wachtwoord, Voornaam, Achternaam, Opleiding,
-                    null);
-                string doel = String.Format("/{0}", gebruiker);
-                Response.Redirect(doel, permanent: true);
+                int gebruiker = registratieRepository.CreateAccount(Email, Wachtwoord, Voornaam, Achternaam, OpleidingsNiveau,
+                    null, null, School, "student");
+                string rol = InlogRepository.GetUserRol(Email);
+                HttpContext.Session.SetObjectAsJson("ID", gebruiker);
+                HttpContext.Session.SetObjectAsJson("Rol", rol);
+                Response.Redirect("/ProfielPaginaStudent");
             }
             else
             {

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DWF.Helpers;
 using DWF.Models;
 using DWF.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -12,10 +13,21 @@ namespace DWF.Pages
 
         [BindProperty] public int opdrachtId { get; set; }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            Response.Cookies.Delete("opdrachtId");
-            opdrachten = TriageRepository.Get();
+            int id = HttpContext.Session.GetObjectFromJson<int>("ID");
+            string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            if (id != 0 && rol == "triage")
+            {
+                Response.Cookies.Delete("opdrachtId"); 
+                opdrachten = TriageRepository.Get();
+                return Page(); 
+            }
+            else if (id != 0 && rol == "student")
+            {
+                return RedirectToPage("/ProfielPaginaStudent");
+            }
+            return RedirectToPage("/Index");
         }
 
         public void OnPostBekijk()

@@ -1,0 +1,49 @@
+*{
+    
+}
+
+p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid black;
+    margin: 0;
+    color: black;
+    padding: 0.5rem;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.opdrachten{
+    width: 40%;
+    margin: 0 4% 0 4%;
+    display: inline-block;
+}
+
+.naam{
+    border-radius:20px 20px 0 0;
+}
+
+.beschrijving{
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 3.57142857143rem;
+    height: 6rem;
+}
+
+.btn{
+    width: 100%;
+    margin-bottom: 1rem;
+}

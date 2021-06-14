@@ -37,6 +37,14 @@ namespace DWF.Repository
             return id;
             
         }
+        public static string GetUserRol(string email)
+        {
+            using var connectie = repository.Connect();
+
+            var rol = connectie.QuerySingle <string>("SELECT rol FROM gebruikers WHERE email = @email",
+                param: new {@email = email});
+            return rol;
+        }
 
     }
 }

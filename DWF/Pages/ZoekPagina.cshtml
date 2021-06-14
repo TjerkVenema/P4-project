@@ -1,0 +1,44 @@
+@page
+@using DWF.Repository
+@using DWF.Models
+@model DWF.Pages.ZoekPagina
+
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="css/ZoekPagina.css"/>
+    <title></title>
+</head>
+<body>
+<div>
+    <a class="btn btn-lg btn-primary" href="/FilterSelectie">Filters kiezen.</a>
+    
+    @if(Filters.Type != null){
+    foreach(var opdracht in ZoekRepository.opdrachtenMetFilters(Filters.Type)){
+        <div class="opdrachten">
+            <a href="/OpdrachtenPagina.cshtml">
+                <p class="naam">@opdracht.opdracht_naam</p>
+                <p class="beschrijving">@opdracht.beschrijving</p>
+            </a>
+            </div>
+    };
+    }
+    else
+    {
+        foreach(var opdracht in ZoekRepository.opdrachten()){
+            <div class="opdrachten">
+                <a  href="/OpdrachtenPagina.cshtml">
+                    <p class="naam">@opdracht.opdracht_naam</p>
+                    <p class="beschrijving">@opdracht.beschrijving</p>
+                </a>
+            </div>
+        };
+    }
+    
+</div>
+</body>
+</html>

@@ -7,6 +7,7 @@ using DWF.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Ubiety.Dns.Core.Records.NotUsed;
 
 namespace DWF.Pages
 {
@@ -19,17 +20,15 @@ namespace DWF.Pages
          RegularExpression(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$",
              ErrorMessage = "Uw wachtwoord voldoet niet aan de vereisten.")]
         public string wachtwoord { get; set; }
+
+        [BindProperty]
+        public string wachtwoordcheck { get; set; }
         
-        [BindProperty, MinLength(2, ErrorMessage = "Uw voornaam moet minimaal 2 letters bevatten")]
-        public string voornaam { get; set; }
+        [BindProperty]
+        public string opleidingsniveau { get; set; }
         
-        [BindProperty, MinLength(2, ErrorMessage = "Uw achternaam moet minimaal 2 letters bevatten")]
-        public string achternaam { get; set; }
-        
-        
-        [BindProperty,
-         EmailAddress(ErrorMessage = "Voer alstublieft een geldig e-mailadres in")]
-        public string email { get; set; }
+        [BindProperty]
+        public int studiejaar { get; set; }
         
         [BindProperty]
         public string opleiding { get; set; }
@@ -41,55 +40,73 @@ namespace DWF.Pages
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
             Gebruiker = StudentRepository.GetStudent(id);
-            bool isDubbel = RegistratieRepository.Isdubbel(email);
-            if (ModelState.IsValid && !isDubbel)
+
+            bool wachtwoordgoed = WachtwoordCheck();
+            
+            if (ModelState.IsValid && wachtwoordgoed)
             {
-                Gebruiker nieuweGebruiker = new Gebruiker();
-                nieuweGebruiker.voornaam = voornaam;
-                nieuweGebruiker.achternaam = achternaam;
-                nieuweGebruiker.email = email;
-                nieuweGebruiker.opleiding = opleiding;
-                nieuweGebruiker.wachtwoord = wachtwoord;
+                if (opleidingsniveau != null)
+                {
+                    Gebruiker.opleidingsNiveau = opleidingsniveau;
+                }
                 
-                if (nieuweGebruiker.voornaam != null)
+                if (opleiding != null)
                 {
-                    Gebruiker.voornaam = nieuweGebruiker.voornaam;
+                    Gebruiker.opleiding = opleiding;
                 }
-                if (nieuweGebruiker.achternaam != null)
+                if (studiejaar != 0)
                 {
-                    Gebruiker.achternaam = nieuweGebruiker.achternaam;
+                    Gebruiker.studiejaar = studiejaar;
                 }
-                if (nieuweGebruiker.email != null)
-                {
-                    Gebruiker.email = nieuweGebruiker.email;
-                }
-                if (nieuweGebruiker.opleiding != null)
-                {
-                    Gebruiker.opleiding = nieuweGebruiker.opleiding;
-                }
-                if (nieuweGebruiker.wachtwoord != null)
-                {
-                    Gebruiker.wachtwoord = nieuweGebruiker.wachtwoord;
+                if (wachtwoord != null)
+                { 
+                    Gebruiker.wachtwoord = wachtwoord;
                 }
                 StudentRepository.UpdateStudent(Gebruiker);
+                Response.Redirect("/ProfielPaginaStudent");
             }
             else
             {
-                if (isDubbel)
+                if (wachtwoordcheck == null && wachtwoord != null)
                 {
-                    Bericht = "Dit e-mailadres is al geregistreerd.";
-                }
-                else
+                    Bericht = "Bijde velden zijn verplicht";
+                } 
+                else if (wachtwoordcheck != Gebruiker.wachtwoord)
                 {
-                    Bericht = "Voer alstublieft de velden juist in.";
+                    Bericht = "Onjuist wachtwoord ingevoerd";
                 }
             }
-            Response.Redirect("/ProfielPaginaStudent");
+            
+        }
+
+        public bool WachtwoordCheck()
+        {
+            int id = HttpContext.Session.GetObjectFromJson<int>("ID");
+            Gebruiker = StudentRepository.GetStudent(id);
+            if (wachtwoordcheck == Gebruiker.wachtwoord || wachtwoord == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            Gebruiker = StudentRepository.GetStudent(26);
+            int id = HttpContext.Session.GetObjectFromJson<int>("ID");
+            string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            if (id != 0 && rol == "student")
+            {
+                Gebruiker = StudentRepository.GetStudent(id);
+                return Page(); 
+            }
+            else if (id != 0 && rol == "triage")
+            {
+                return RedirectToPage("/TriageHomepagina");
+            }
+            return RedirectToPage("/Index");
         }
     }
 }

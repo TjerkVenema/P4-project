@@ -60,14 +60,26 @@
         </div>
 
     <div class="input-group">
-      <label for="dropdown" class="form-label">Opleidingsniveau</label>
-      @Html.DropDownListFor(model => model.Opleiding, new List<SelectListItem>
+      <label for="opleidingDropdown" class="form-label">Opleidingsniveau</label>
+      @Html.DropDownListFor(model => model.OpleidingsNiveau, new List<SelectListItem>
       {
         new SelectListItem {Text = "MBO", Value = "MBO"},
         new SelectListItem {Text = "HBO", Value = "HBO"},
-        new SelectListItem {Text = "Universiteit", Value = "Universiteit"}
-      }, new {@id = "dropdown"})
+        new SelectListItem {Text = "Universiteit", Value = "Universiteit"},
+        new SelectListItem {Text = "Anders...", Value = "Anders"}
+      }, new {@id = "opleidingDropdown"})
     </div>
+    
+    <div class="input-group">
+          <label for="schoolDropdown" class="form-label">School</label>
+          @Html.DropDownListFor(model => model.School, new List<SelectListItem>
+          {
+            new SelectListItem {Text = "NHLStenden", Value = "NHL"},
+            new SelectListItem {Text = "ROC Friese Poort", Value = "FriesePoort"},
+            new SelectListItem {Text = "ROC Friesland College", Value = "FrieslandCollege"},
+            new SelectListItem {Text = "Anders...", Value = "Anders"}
+          }, new {@id = "schoolDropdown"})
+        </div>
 
     <div class="text-danger">@Model.Bericht</div>
 

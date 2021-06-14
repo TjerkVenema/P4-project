@@ -1,0 +1,63 @@
+@page
+@model DWF.Pages.FiltersToevoegen
+
+@{
+    Layout = "Shared/_Student";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <link href="@Url.Content("~/css/Student.css")" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="kop">Filters toevoegen</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+
+        <div class="col-6">
+            <form method="post">
+                <div class="form-group">
+                    <label class="form-label">Opleiding toevoegen</label>
+                    <select asp-for="opleiding" class="form-select form-control">
+                        <option value="ICT">ICT</option>
+                        <option value="ITSM">ITSM</option>
+                        <option value="CMD">CMD</option>
+                        <option value="dummy1">lorem1</option>
+                        <option value="dummy2">lorem2</option>
+                        <option value="dummy3">lorem3</option>
+                        <option value="dummy4">lorem4</option>
+                        <option value="dummy5">lorem5</option>
+                        <option value="dummy6">lorem6</option>
+                    </select>
+                </div>
+                <div class="ruimte form-group">
+                    <label class="form-label">Studiejaar</label>
+                    <select asp-for="studiejaar" class="form-select form-control">
+                        <option value="1">Jaar 1</option>
+                        <option value="2">Jaar 2</option>
+                        <option value="3">Jaar 3</option>
+                        <option value="4">Jaar 4</option>
+                    </select>
+                </div>
+                
+                <div class="ruimte">
+                    <button type="submit" asp-page-handler="Toevoegen" class="btn btn-primary">Filters toepassen</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-4"></div>
+
+        <div class="col-1"></div>
+    </div>
+</div>
+</body>
+</html>

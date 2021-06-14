@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DWF.Pages
 {
-    public class Statistieken : PageModel
+    public class ZoekPagina : PageModel
     {
         public void OnGet()
         {

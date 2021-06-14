@@ -28,6 +28,15 @@ CREATE TABLE `triage` (
   CONSTRAINT `triage_ibfk_1` FOREIGN KEY (`gebruiker_id`) REFERENCES `gebruikers` (`gebruiker_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `triage`
+--
+
+LOCK TABLES `triage` WRITE;
+/*!40000 ALTER TABLE `triage` DISABLE KEYS */;
+/*!40000 ALTER TABLE `triage` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -38,4 +47,4 @@ CREATE TABLE `triage` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-23 20:16:56
+-- Dump completed on 2021-06-11 14:03:42

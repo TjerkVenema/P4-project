@@ -26,14 +26,28 @@ CREATE TABLE `aanvragen_student` (
   `aanvraag_id` int NOT NULL AUTO_INCREMENT,
   `gebruiker_id` int NOT NULL,
   `opdracht_id` int NOT NULL,
-  `beschrijving` varchar(1000) NOT NULL,
+  `validatie_leeruitkomsten` tinyint NOT NULL,
+  `beschrijving` varchar(1000) DEFAULT NULL,
+  `startdatum` datetime NOT NULL,
+  `einddatum` datetime NOT NULL,
+  `beschikbare_uren` varchar(45) NOT NULL,
   PRIMARY KEY (`aanvraag_id`),
-  KEY `opdracht_id` (`opdracht_id`),
   KEY `aanvragen_student_ibfk_1_idx` (`gebruiker_id`),
+  KEY `aanvragen_student_ibfk_2_idx` (`opdracht_id`),
   CONSTRAINT `aanvragen_student_ibfk_1` FOREIGN KEY (`gebruiker_id`) REFERENCES `gebruikers` (`gebruiker_id`),
   CONSTRAINT `aanvragen_student_ibfk_2` FOREIGN KEY (`opdracht_id`) REFERENCES `opdrachten` (`opdracht_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aanvragen_student`
+--
+
+LOCK TABLES `aanvragen_student` WRITE;
+/*!40000 ALTER TABLE `aanvragen_student` DISABLE KEYS */;
+INSERT INTO `aanvragen_student` VALUES (6,36,1,1,NULL,'2021-06-11 00:00:00','2021-06-22 00:00:00','24 - 32'),(7,36,1,0,'ik wil geld','2021-06-11 00:00:00','2021-07-08 00:00:00','0 - 4'),(8,36,1,0,'ik wil geld','2021-06-11 00:00:00','2021-06-29 00:00:00','24 - 32'),(9,36,1,0,'ik wil geld','2021-06-11 00:00:00','2021-06-30 00:00:00','0 - 4'),(10,36,1,1,NULL,'2021-06-11 00:00:00','2021-06-17 00:00:00','0 - 4');
+/*!40000 ALTER TABLE `aanvragen_student` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -44,4 +58,4 @@ CREATE TABLE `aanvragen_student` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-23 20:16:56
+-- Dump completed on 2021-06-11 14:03:42
