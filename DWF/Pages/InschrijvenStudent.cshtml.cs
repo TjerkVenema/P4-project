@@ -38,16 +38,16 @@ namespace DWF.Pages
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
             string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
-            //cookie request met id van de opdracht
+            int opdrachtid = HttpContext.Session.GetObjectFromJson<int>("opdrachtid");
             if (id != 0 && rol == "student")
             {
-                /*if (opdrachtid == 0)
+                if (opdrachtid == 0)
                 {
                     return RedirectToPage("homepaginastudents");
-                }*/
+                }
                 Datumtot = DateTime.Today; 
                 Datumvan = DateTime.Today;
-                Opdracht = TriageRepository.GetById(1);
+                Opdracht = TriageRepository.GetById(opdrachtid);
                 return Page();
             }
             else if (id != 0 && rol == "triage")
@@ -134,7 +134,7 @@ namespace DWF.Pages
         public void OnPostAnulleren()
         {
             Response.Cookies.Delete("studiepunten");
-            Response.Redirect("/ProfielPaginaStudent");
+            Response.Redirect("/homepaginastudents");
         }
         
     }

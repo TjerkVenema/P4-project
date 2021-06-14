@@ -1,6 +1,7 @@
 @page
 @using DWF.Repository
 @using DWF.Models
+@using DWF.Helpers
 @model DWF.Pages.ZoekPagina
 
 @{
@@ -20,7 +21,7 @@
     @if(Filters.Type != null){
     foreach(var opdracht in ZoekRepository.opdrachtenMetFilters(Filters.Type)){
         <div class="opdrachten">
-            <a href="/OpdrachtenPagina.cshtml">
+            <a href="/OpdrachtBekijken">
                 <p class="naam">@opdracht.opdracht_naam</p>
                 <p class="beschrijving">@opdracht.beschrijving</p>
             </a>
@@ -31,12 +32,15 @@
     {
         foreach(var opdracht in ZoekRepository.opdrachten()){
             <div class="opdrachten">
-                <a  href="/OpdrachtenPagina.cshtml">
-                    <p class="naam">@opdracht.opdracht_naam</p>
-                    <p class="beschrijving">@opdracht.beschrijving</p>
-                </a>
+                <a href="/OpdrachtBekijken">
+                   <input value="@{
+                                     HttpContext.Session.SetObjectAsJson("opdrachtid", opdracht.opdracht_id);
+                                 }" type="hidden">
+                        <p class="naam">@opdracht.opdracht_naam</p>
+                        <p class="beschrijving">@opdracht.beschrijving</p>
+                    </a>
             </div>
-        };
+        }
     }
     
 </div>
