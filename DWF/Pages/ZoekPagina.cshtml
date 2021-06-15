@@ -20,7 +20,7 @@
     <a class="btn btn-lg btn-primary" href="/FilterSelectie">Filters kiezen.</a>
     
     @if(Filters.Type != null){
-    foreach(var opdracht in ZoekRepository.opdrachtenMetFilters(Filters.Type)){
+    foreach(var opdracht in ZoekRepository.opdrachtenMetFilters(Filters.Type, Filters.Sector, Filters.OpleidingsNiveau)){
         <div class="opdrachten">
             <a href="/OpdrachtBekijken?opdracht=@opdracht.opdracht_id">
                 <p class="naam">@opdracht.opdracht_naam</p>

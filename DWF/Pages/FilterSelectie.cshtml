@@ -16,6 +16,21 @@
     <div class="form">
         <form method="post" novalidate>
             <div class="input-group">
+                <label for="sector" class="form-label">Sector vraag</label>
+                @Html.DropDownListFor(model => model.Sector, new List<SelectListItem>
+                {
+                    new SelectListItem{Text = "Website", Value = "website"},
+                    new SelectListItem{Text = "Social media", Value = "social_media"},
+                    new SelectListItem{Text = "Online marketing", Value = "online_marketing"},
+                    new SelectListItem{Text = "Online sales", Value = "online_sales"},
+                    new SelectListItem{Text = "Proces/Productieverbetering", Value = "procesverbetering"},
+                    new SelectListItem{Text = "Security", Value = "security"},
+                    new SelectListItem{Text = "Gegevensbewerking", Value = "gegevensbewerking"},
+                    new SelectListItem{Text = "Anders", Value = "anders"}
+                }, new{@id = "sector"})
+            </div>
+            
+            <div class="input-group">
                 <label for="type" class="form-label">Type vraag</label>
                 @Html.DropDownListFor(model => model.Type, new List<SelectListItem>
                 {
@@ -24,6 +39,17 @@
                     new SelectListItem{Text = "Anders", Value = "anders"}
                 }, new{@id = "type"})
             </div>
+            
+            <div class="input-group">
+                                        <label for="opleidingsNiveau" class="form-label">Gevraagde opleidingsniveau</label>
+                                        @Html.DropDownListFor(model => model.OpleidingsNiveau, new List<SelectListItem>
+                                        {
+                                            new SelectListItem {Text = "MBO", Value = "MBO"},
+                                            new SelectListItem {Text = "HBO", Value = "HBO"},
+                                            new SelectListItem {Text = "Universiteit", Value = "Universiteit"},
+                                            new SelectListItem {Text = "Anders", Value = "Anders"}
+                                        }, new{@id = "opleidingsNiveau"})
+                                    </div>
             
             <button type="submit" class="btn btn-lg btn-primary">Zoek met geselecteerde filters.</button>
         </form>

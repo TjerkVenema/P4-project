@@ -20,14 +20,16 @@ namespace DWF.Repository
             return opdrachtlijst as List<Opdracht>;
         }
         
-        public static List<Opdracht> opdrachtenMetFilters(string type)
+        public static List<Opdracht> opdrachtenMetFilters(string type, string sector, string opleidingsNiveau)
         {
             using var connectie = repository.Connect();
             var opdrachtlijst = connectie.Query<Opdracht>(
-                "SELECT * FROM opdrachten WHERE opdracht_status = @opdracht_status AND type = @type",
+                "SELECT * FROM opdrachten WHERE opdracht_status = @opdracht_status AND type = @type AND sector = @sector AND gewenste_opleiding = @opleidingsNiveau",
                 new
                 {
-                    type = type,
+                    @opleidingsNiveau = opleidingsNiveau,
+                    @sector = sector,
+                    @type = type,
                     opdracht_status = "beschikbaar"
                 });
             return opdrachtlijst as List<Opdracht>;
