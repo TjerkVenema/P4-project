@@ -10,6 +10,7 @@
 <html>
 <head>
     <title></title>
+    <link rel="stylesheet" href="css/Filters.css"/>
 </head>
 <body>
 <div>
@@ -27,7 +28,7 @@
                     new SelectListItem{Text = "Security", Value = "security"},
                     new SelectListItem{Text = "Gegevensbewerking", Value = "gegevensbewerking"},
                     new SelectListItem{Text = "Anders", Value = "anders"}
-                }, new{@id = "sector"})
+                }, new{@id = "sector" ,@class = "dropdown"})
             </div>
             
             <div class="input-group">
@@ -37,19 +38,31 @@
                     new SelectListItem{Text = "Advies(rapport)", Value = "advies"},
                     new SelectListItem{Text = "Product", Value = "Product"},
                     new SelectListItem{Text = "Anders", Value = "anders"}
-                }, new{@id = "type"})
+                }, new{@id = "type" ,@class = "dropdown"})
             </div>
             
             <div class="input-group">
-                                        <label for="opleidingsNiveau" class="form-label">Gevraagde opleidingsniveau</label>
-                                        @Html.DropDownListFor(model => model.OpleidingsNiveau, new List<SelectListItem>
-                                        {
-                                            new SelectListItem {Text = "MBO", Value = "MBO"},
-                                            new SelectListItem {Text = "HBO", Value = "HBO"},
-                                            new SelectListItem {Text = "Universiteit", Value = "Universiteit"},
-                                            new SelectListItem {Text = "Anders", Value = "Anders"}
-                                        }, new{@id = "opleidingsNiveau"})
-                                    </div>
+                <label for="opleidingsNiveau" class="form-label">Gewenste opleidingsniveau</label>
+                @Html.DropDownListFor(model => model.OpleidingsNiveau, new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "MBO", Value = "MBO"},
+                    new SelectListItem {Text = "HBO", Value = "HBO"},
+                    new SelectListItem {Text = "Universiteit", Value = "Universiteit"},
+                    new SelectListItem {Text = "Anders", Value = "Anders"}
+                }, new{@id = "opleidingsNiveau" ,@class = "dropdown"})
+            </div>
+            
+            <div class="input-group">
+                                                    <label for="opleidingsjaar" class="form-label">Gewenste opleidingsjaar</label>
+                                                    @Html.DropDownListFor(model => model.Opleidingsjaar, new List<SelectListItem>
+                                                    {
+                                                        new SelectListItem {Text = "Jaar 1", Value = "1"},
+                                                        new SelectListItem {Text = "Jaar 2", Value = "2"},
+                                                        new SelectListItem {Text = "Jaar 3", Value = "3"},
+                                                        new SelectListItem {Text = "Jaar 4", Value = "4"}
+                                                    }, new{@id = "opleidingsjaar" ,@class = "dropdown"})
+                                                </div>
+                        
             
             <button type="submit" class="btn btn-lg btn-primary">Zoek met geselecteerde filters.</button>
         </form>

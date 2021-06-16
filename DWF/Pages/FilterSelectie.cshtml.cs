@@ -18,6 +18,9 @@ namespace DWF.Pages
         [BindProperty]
         public string OpleidingsNiveau { get; set; }
         
+        [BindProperty]
+        public string Opleidingsjaar { get; set; }
+        
         public void OnGet()
         {
             
@@ -25,6 +28,7 @@ namespace DWF.Pages
 
         public void OnPost()
         {
+            Filters.Opleidingsjaar = Opleidingsjaar;
             Filters.OpleidingsNiveau = OpleidingsNiveau;
             Filters.Sector = Sector;
             Filters.Type = Type;

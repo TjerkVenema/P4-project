@@ -8,7 +8,7 @@ namespace DWF.Repository
     {
         public static Repository repository = new();
         
-        public static List<Opdracht> opdrachten()
+        public static List<Opdracht> Opdrachten()
         {
             using var connectie = repository.Connect();
             var opdrachtlijst = connectie.Query<Opdracht>(
@@ -20,13 +20,14 @@ namespace DWF.Repository
             return opdrachtlijst as List<Opdracht>;
         }
         
-        public static List<Opdracht> opdrachtenMetFilters(string type, string sector, string opleidingsNiveau)
+        public static List<Opdracht> OpdrachtenMetFilters(string type, string sector, string opleidingsNiveau, string opleidingsjaar)
         {
             using var connectie = repository.Connect();
             var opdrachtlijst = connectie.Query<Opdracht>(
-                "SELECT * FROM opdrachten WHERE opdracht_status = @opdracht_status AND type = @type AND sector = @sector AND gewenste_opleiding = @opleidingsNiveau",
+                "SELECT * FROM opdrachten WHERE opdracht_status = @opdracht_status AND type = @type AND sector = @sector AND gewenste_opleiding = @opleidingsNiveau AND opleidingsjaar = @opleidingsjaar",
                 new
                 {
+                    @opleidingsjaar = opleidingsjaar,
                     @opleidingsNiveau = opleidingsNiveau,
                     @sector = sector,
                     @type = type,

@@ -7,5 +7,8 @@ namespace DWF.Models
         public static string Sector { get; set; }
         
         public static string OpleidingsNiveau { get; set; }
+        
+        public static string Opleidingsjaar { get; set; }
+
     }
 }
