@@ -9,7 +9,7 @@ namespace DWF.Models
 
         public int gebruiker_id { get; set; }
 
-        public bool validatieLeeruitkomsten { get; set; }
+        public bool validatie_leeruitkomsten { get; set; }
         
         public string beschrijving { get; set; }
 
@@ -17,7 +17,7 @@ namespace DWF.Models
         
         public DateTime eindDatum { get; set; }
         
-        public string beschikbareUren { get; set; }
+        public string beschikbare_uren { get; set; }
         
         public string student_naam { get; set; }
 

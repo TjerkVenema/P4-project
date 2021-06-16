@@ -1,3 +1,5 @@
+using System;
+
 namespace DWF.Models
 {
     public class Opdracht
@@ -21,5 +23,9 @@ namespace DWF.Models
         public string gewenste_opleiding { get; set; }
 
         public status opdracht_status { get; set; }
+        
+        public DateTime startdatum { get; set; }
+        
+        public DateTime einddatum { get; set; }
     }
 }

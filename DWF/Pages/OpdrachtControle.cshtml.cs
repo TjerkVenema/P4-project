@@ -31,7 +31,7 @@ namespace DWF.Pages
             }
             else if (id != 0 && rol == "student")
             {
-                return RedirectToPage("/ProfielPaginaStudent");
+                return RedirectToPage("/homepaginastudents");
             }
             return RedirectToPage("/Index");
         }

@@ -21,7 +21,7 @@ namespace DWF.Pages
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
             StudentRepository.AddFilters(id, opleiding, studiejaar);
-            Response.Redirect("/ProfielPaginaStudent");
+            Response.Redirect("/homepaginastudents");
         }
         
         public IActionResult OnGet()
@@ -35,7 +35,7 @@ namespace DWF.Pages
                 {
                     return Page(); 
                 }
-                return RedirectToPage("/ProfielPaginaStudent");
+                return RedirectToPage("/homepaginastudents");
             }
             else if (id != 0 && rol == "triage")
             {

@@ -7,24 +7,21 @@ namespace DWF.Pages
 {
     public class ZoekPagina : PageModel
     {
-        [BindProperty]
-        public Opdracht Opdracht { get; set; }
-        
-        public void OnGet()
+        public IActionResult OnGet()
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
-            string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
-
-            if (id == 0 && rol == null)
+            string rol = HttpContext.Session.GetObjectFromJson<string>("Rol"); 
+            
+            if (id != 0 && rol == "student")
             {
-                Response.Redirect("/Error");
+                return Page();
             }
-        }
-
-        public IActionResult OnPostBekijk()
-        {
-            HttpContext.Session.SetObjectAsJson("opdrachtid", Opdracht.opdracht_id);
-            return RedirectToPage("OpdrachtBekijken");
+            if (id != 0 && rol == "triage")
+            {
+                return RedirectToPage("/TriageHomepagina"); 
+            }
+            
+            return RedirectToPage("/Index");
         }
     }
 }
