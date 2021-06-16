@@ -33,21 +33,21 @@ namespace DWF.Pages
         
         [BindProperty]
         public Opdracht Opdracht { get; set; }
-        
+        public static int opdrachtid;
         public IActionResult OnGet()
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
             string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
-            //cookie request met id van de opdracht
+            opdrachtid = Convert.ToInt32(Request.Query["opdracht"]);
             if (id != 0 && rol == "student")
             {
-                /*if (opdrachtid == 0)
+                if (opdrachtid == 0)
                 {
                     return RedirectToPage("homepaginastudents");
-                }*/
+                }
                 Datumtot = DateTime.Today; 
                 Datumvan = DateTime.Today;
-                Opdracht = TriageRepository.GetById(1);
+                Opdracht = TriageRepository.GetById(opdrachtid);
                 return Page();
             }
             else if (id != 0 && rol == "triage")
@@ -60,12 +60,12 @@ namespace DWF.Pages
         public void OnPostNee()
         {
             Response.Cookies.Append("studiepunten", "Nee");
-            Response.Redirect("/InschrijvenStudent");
+            Response.Redirect("/InschrijvenStudent?opdracht=" + opdrachtid);
         }
         public void OnPostJa()
         {
             Response.Cookies.Append("studiepunten", "Ja");
-            Response.Redirect("/InschrijvenStudent");
+            Response.Redirect("/InschrijvenStudent?opdracht=" + opdrachtid);
         }
         
         public void OnPostInschrijven()
@@ -134,7 +134,7 @@ namespace DWF.Pages
         public void OnPostAnulleren()
         {
             Response.Cookies.Delete("studiepunten");
-            Response.Redirect("/ProfielPaginaStudent");
+            Response.Redirect("/homepaginastudents");
         }
         
     }

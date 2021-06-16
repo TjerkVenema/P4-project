@@ -1,0 +1,61 @@
+@page
+@model DWF.Pages.OpdrachtBekijken
+
+@{
+    Layout = "Shared/_Student";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <link href="@Url.Content("~/css/Student.css")" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4"></div>
+        
+        <div class="col-4">
+            <div class="row form-group ruimte">
+                <div>
+                    <label class="form-label">Titel opdracht</label>
+                    <h5>@Model.opdracht.opdracht_naam</h5>
+                </div>
+            </div>
+
+            <div class="row form-group ruimte">
+                <div>
+                    <label class="form-label">Beschrijving opdracht</label>
+                    <h5>@Model.opdracht.beschrijving</h5>
+                </div>
+            </div>
+            
+            <div class="row form-group ruimte">
+                <label class="form-label">start en einddatum</label>
+                <div class="d-flex flex-nowrap">
+                    <div class="w-50">
+                        <label class="form-label">Van</label>
+                        <h5>hoi</h5>
+                    </div>
+                    <div class="w-50">
+                        <label class="form-label">Tot</label>
+                        <h5>hoi</h5>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row ruimte">
+                <div class="ruimte form-group flex-nowrap d-flex justify-content-around">
+                    <a class="btn btn-secondary w-25" href="/InschrijvenStudent?opdracht=@Request.Query["opdracht"]">Inschrijven</a>
+                    <a class="btn btn-secondary w-25" href="/ZoekPagina">Terug</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4"></div>
+    </div>
+</div>
+</body>
+</html>
