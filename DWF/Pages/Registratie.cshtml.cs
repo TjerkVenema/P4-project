@@ -15,7 +15,7 @@ namespace DWF.Pages
             {
                 if (rol == "student")
                 {
-                    return RedirectToPage("/ProfielPaginaStudent");
+                    return RedirectToPage("/homepaginastudents");
                 }
 
                 if (rol == "triage")

@@ -33,7 +33,9 @@ namespace DWF.Pages
         
         [BindProperty]
         public Opdracht Opdracht { get; set; }
-        public static int opdrachtid;
+        
+        public static int opdrachtid { get; set; }
+        
         public IActionResult OnGet()
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
@@ -70,7 +72,8 @@ namespace DWF.Pages
         
         public void OnPostInschrijven()
         {
-            Opdracht = TriageRepository.GetById(1);
+            int id = HttpContext.Session.GetObjectFromJson<int>("ID");
+            Opdracht = TriageRepository.GetById(opdrachtid);
             if (Request.Cookies["studiepunten"] == null)
             {
                 bericht3 = "Kies alstublieft een optie";
@@ -79,47 +82,47 @@ namespace DWF.Pages
             else if (Datumvan < Datumtot && Request.Cookies["studiepunten"] == "Nee" && ModelState.IsValid)
             {
                 Aanvragen_student nieuweaanvraag = new Aanvragen_student();
-                nieuweaanvraag.gebruiker_id = 36;
-                nieuweaanvraag.opdracht_id = 1;
+                nieuweaanvraag.gebruiker_id = id;
+                nieuweaanvraag.opdracht_id = opdrachtid;
                 if (Request.Cookies["studiepunten"] == "Ja")
                 {
-                    nieuweaanvraag.validatieLeeruitkomsten = true;
+                    nieuweaanvraag.validatie_leeruitkomsten = true;
                 }
                 else
                 {
-                    nieuweaanvraag.validatieLeeruitkomsten = false;
+                    nieuweaanvraag.validatie_leeruitkomsten = false;
                     nieuweaanvraag.beschrijving = beschrijving;
                 }
 
                 nieuweaanvraag.startDatum = Datumvan;
                 nieuweaanvraag.eindDatum = Datumtot;
-                nieuweaanvraag.beschikbareUren = uurbeschikbaar;
+                nieuweaanvraag.beschikbare_uren = uurbeschikbaar;
                 StudentRepository.AddAanvraag(nieuweaanvraag);
                 Response.Cookies.Delete("studiepunten");
-                Response.Redirect("/ProfielPaginaStudent");
+                Response.Redirect("/homepaginastudents");
             }
             
             else if (Datumvan < Datumtot && Request.Cookies["studiepunten"] == "Ja")
             {
                 Aanvragen_student nieuweaanvraag = new Aanvragen_student();
-                nieuweaanvraag.gebruiker_id = 36;
-                nieuweaanvraag.opdracht_id = 1;
+                nieuweaanvraag.gebruiker_id = id;
+                nieuweaanvraag.opdracht_id = opdrachtid;
                 if (Request.Cookies["studiepunten"] == "Ja")
                 {
-                    nieuweaanvraag.validatieLeeruitkomsten = true;
+                    nieuweaanvraag.validatie_leeruitkomsten = true;
                 }
                 else
                 {
-                    nieuweaanvraag.validatieLeeruitkomsten = false;
+                    nieuweaanvraag.validatie_leeruitkomsten = false;
                     nieuweaanvraag.beschrijving = beschrijving;
                 }
 
                 nieuweaanvraag.startDatum = Datumvan;
                 nieuweaanvraag.eindDatum = Datumtot;
-                nieuweaanvraag.beschikbareUren = uurbeschikbaar;
+                nieuweaanvraag.beschikbare_uren = uurbeschikbaar;
                 StudentRepository.AddAanvraag(nieuweaanvraag);
                 Response.Cookies.Delete("studiepunten");
-                Response.Redirect("/ProfielPaginaStudent");
+                Response.Redirect("/homepaginastudents");
             }
             else if (Datumvan > Datumtot || Datumvan == Datumtot)
             {

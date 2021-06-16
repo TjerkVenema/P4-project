@@ -2,36 +2,76 @@
 @model DWF.Pages.Homepaginastudents
 
 @{
-    <!DOCTYPE html>
-    <input type="text" placeholder="zoekopdracht..">
-    <br>
-    <br/>
-<p1>Beschikbare taken: </p1>
-    <br>
-    <div class="studentendata">
-    </div>
-    <br>
-<div class="col-md-6">
-    <a> opdracht 1</a>
-    <button type="button">bekijk opdracht</button>
+    Layout = "Shared/_Student";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="@Url.Content("~/css/Student.css")" type="text/css" rel="stylesheet">
+    <link href="@Url.Content("~/css/ZoekPagina.css")" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <div class="ruimteboven">
+                <input type="text" placeholder="zoekopdracht.."><br>
+            </div>
+            <div class="ruimteboven2">
+                <p1>Beschikbare taken: </p1>
+                <div class="col-md-6">
+                    <a> opdracht 1</a><br>
+                    <button type="button">bekijk opdracht</button>
+                </div>
+                <div class="col-md-6 ruimteboven2">
+                    <a>opdracht 2</a><br>
+                    <button type="button">bekijk opdracht</button>
+                </div>
+                <div class="col-md-6 ruimteboven2">
+                    <a>opdracht 3</a><br>
+                    <button type="button">bekijk opdracht</button>
+                </div>
+                <div class="col-md-6 ruimteboven2">
+                    <a>opdracht 4</a><br>
+                    <button type="button">bekijk opdracht</button>
+                </div>
+            </div>
         </div>
-    <br>
-    <div class="col-md-6">
-        <a>opdracht 2</a>
-        <button type="button">bekijk opdracht</button>
-</div>
-  <br>  
-<div class="col-md-6">
-    <a>opdracht 3</a>
-    <button type="button">bekijk opdracht</button>
-</div>
-<br>
-    <div class="col-md-6">
-        <a>opdracht 4</a>
-        <button type="button">bekijk opdracht</button>
-        <br>
+
+        <div class="col-1"></div>
+        
+        <div class="col-5">
+            <div class="row ruimteboven">
+                <h3 class="kop">Mijn opdrachten</h3>
+            </div>
+            @if (Model.Opdrachten.Count == 0)
+            {
+                <div class="row">
+                    <div>
+                        <h5 class="center">U bent op dit moment niet bezig met een opdracht</h5>
+                        <h5 class="center">Klik hier om er een uit te zoeken</h5>
+                        <div class="justify-content-center d-flex">
+                            <a class="btn btn-primary w-auto" href="/ZoekPagina">Opdracht zoeken</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            else 
+            {
+                foreach (var opdracht in Model.Opdrachten)
+                {
+                    <div class="row">
+                        <div>
+                            <p class="naam">@opdracht.opdracht_naam</p>
+                            <p class="beschrijving">@opdracht.beschrijving</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
     </div>
-    
-    <html></html>
-
-
+</div>
+</body>
+</html>

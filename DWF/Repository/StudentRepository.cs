@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using WebMatrix.Data;
 using System.Runtime.InteropServices;
@@ -59,17 +60,42 @@ namespace DWF.Repository
             using var connectie = repository.Connect();
             connectie.Execute(
                 @"INSERT INTO aanvragen_student(gebruiker_id, opdracht_id, validatie_leeruitkomsten, beschrijving, startdatum, einddatum, beschikbare_uren)
-                     VALUES (@gebruikerId, @opdrachtId, @validatie_leeruitkomsten, @Beschrijving, @startdatum, @einddatum, @beschikbare_uren)",
+                     VALUES (@gebruikerId, @opdrachtId, @validatieLeeruitkomsten, @Beschrijving, @startdatum, @einddatum, @beschikbareUren)",
                 new
                 {
                     gebruikerId = aanvraag.gebruiker_id,
                     opdrachtId = aanvraag.opdracht_id,
-                    validatie_leeruitkomsten = aanvraag.validatieLeeruitkomsten,
+                    validatieLeeruitkomsten = aanvraag.validatie_leeruitkomsten,
                     Beschrijving = aanvraag.beschrijving,
                     startdatum = aanvraag.startDatum,
                     einddatum = aanvraag.eindDatum,
-                    beschikbare_uren = aanvraag.beschikbareUren
+                    beschikbareUren = aanvraag.beschikbare_uren
                 });
+        }
+
+        public static List<Opdracht> GetOpdrachten(int gebruikerid)
+        {
+            using var connectie = repository.Connect();
+            var opdrachtId = connectie.Query<int>(
+                "SELECT opdracht_id FROM doet WHERE gebruiker_id = @gebruiker_id", 
+                new
+                {
+                    gebruiker_id = gebruikerid
+                });
+
+            List<Opdracht> opdrachten = new List<Opdracht>();
+            
+            foreach (var id in opdrachtId)
+            {
+                var opdracht = connectie.QuerySingleOrDefault<Opdracht>(
+                    "SELECT * FROM opdrachten WHERE opdracht_id = @opdracht_id",
+                    new
+                    {
+                        opdracht_id = id
+                    });
+                opdrachten.Add(opdracht);
+            }
+            return opdrachten;
         }
     }
 }

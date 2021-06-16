@@ -89,7 +89,7 @@ namespace DWF.Repository
         public static Aanvragen_student GetAanvraagById(int Id)
         {
             using var connectie = repository.Connect();
-            var aanvraag = connectie.QuerySingleOrDefault<Aanvragen_student>(
+            Aanvragen_student aanvraag = connectie.QuerySingleOrDefault<Aanvragen_student>(
                 "SELECT * FROM aanvragen_student WHERE aanvraag_id = @aanvraag_id",
                 new
                 {
@@ -102,7 +102,7 @@ namespace DWF.Repository
                 {
                     opdrachtId = aanvraag.opdracht_id
                 });
-                
+
             aanvraag.student_naam = GetNaam(aanvraag.gebruiker_id);
             return aanvraag;
         }
@@ -145,14 +145,6 @@ namespace DWF.Repository
                     opdrachtId = aanvragenStudent.opdracht_id
                 });
 
-            connectie.Execute(
-                "UPDATE opdrachten SET opdracht_status = @opdracht_status WHERE opdracht_id = @opdrachtId",
-                new
-                {
-                    opdracht_status = 1,
-                    opdrachtId = aanvragenStudent.opdracht_id
-                });
-            
             connectie.Execute(
                 "DELETE FROM aanvragen_student WHERE aanvraag_id = @aanvraag_id",
                 new
