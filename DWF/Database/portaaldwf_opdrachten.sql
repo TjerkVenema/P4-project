@@ -31,6 +31,7 @@ CREATE TABLE `opdrachten` (
   `opdracht_status` enum('bezig','beschikbaar','afgerond','moet_beoordeeld') NOT NULL,
   `type` enum('advies','product','anders') NOT NULL,
   `sector` enum('website','social_media','online_marketing','online_sales','procesverbetering','security','gegevensbewerking','anders') NOT NULL,
+  `opleidingsjaar` enum('1','2','3','4') NOT NULL,
   PRIMARY KEY (`opdracht_id`),
   KEY `gebruiker_id` (`gebruiker_id`),
   CONSTRAINT `opdrachten_ibfk_1` FOREIGN KEY (`gebruiker_id`) REFERENCES `gebruikers` (`gebruiker_id`)
@@ -43,7 +44,7 @@ CREATE TABLE `opdrachten` (
 
 LOCK TABLES `opdrachten` WRITE;
 /*!40000 ALTER TABLE `opdrachten` DISABLE KEYS */;
-INSERT INTO `opdrachten` VALUES (1,36,'hoi','hoi','HBO','beschikbaar','advies','website'),(2,37,'hallo','goeie','MBO','beschikbaar','product','anders');
+INSERT INTO `opdrachten` VALUES (1,36,'hoi','hoi','HBO','beschikbaar','advies','website','1'),(2,37,'hallo','goeie','MBO','beschikbaar','product','anders','1');
 /*!40000 ALTER TABLE `opdrachten` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-16  0:00:36
+-- Dump completed on 2021-06-16 16:12:56
