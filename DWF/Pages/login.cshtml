@@ -23,9 +23,11 @@
             <span asp-validation-for="Password" class="text-danger"></span>          
         </div>
         <div class="col-12 form-group text-center">
-            <button class="btn btn-primary" type="submit">Login</button>
-            <div>
-                <button class ="wachtwoord vergeten">wachtwoord vergeten? </button>
+            <div style="padding-top: 20px">
+                <button class="btn btn-primary" type="submit">Login</button>
+            </div>
+            <div style="padding: 20px 0px">
+                <button class="wachtwoord vergeten btn btn-primary">wachtwoord vergeten? </button>
             </div>
             <asp:Login ID="Login" runat="localhost" DestinationPageUrl="~/login/homepaginastudents.cshtml">
             </asp:Login>
