@@ -28,7 +28,7 @@
         <div class="col-4">
             <form method="post">
                 <div class="form-group">
-                    <label class="form-label">Wil je deze opdracht doen voor validatie van leeruitkomsten?</label>
+                    <label class="form-label">Wilt u deze opdracht doen voor validatie van leeruitkomsten?</label>
                     <div class="d-flex flex-nowrap">
                         @if (Request.Cookies["studiepunten"] == "Ja")
                         {
@@ -59,7 +59,7 @@
                 }
                 
                 <div class="ruimte form-group">
-                    <label class="form-label">In welke periode ben je beschikbaar?</label>
+                    <label class="form-label">In welke periode bent u beschikbaar?</label>
                     <div class="d-flex flex-nowrap">
                         <div class="w-50">    
                             <label class="form-label">Van</label>
@@ -74,7 +74,7 @@
                 </div>
                 
                 <div class="ruimte form-group">
-                    <label class="form-label">Hoeveel uur ben je beschikbaar voor deze opdracht?</label>
+                    <label class="form-label">Hoeveel uur bent u beschikbaar voor deze opdracht?</label>
                     <select asp-for="uurbeschikbaar" class="form-select form-control">
                         <option value="0 - 4">4 uur of minder</option>
                         <option value="4 - 8">4 - 8 uur</option>
