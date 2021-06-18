@@ -1,3 +1,4 @@
+@using Microsoft.AspNetCore.Mvc.RazorPages
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
     <title>@ViewData["Title"] - DWF</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
     <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="fontawesome/css/all.css"/>
 </head>
 <body>
 <header>
@@ -27,7 +29,16 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item">
+                        <a class="nav-link text-dark" href="/Meldingen">U heeft nieuwe meldingen
+                        @if (Model.meldingen.Count != null)
+                        {
+                            <i class="fas fa-exclamation-circle melding"></i>
+                        }
+                            </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-dark" href="/ProfielPaginaStudent">Profiel</a>
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="/Index">Uitloggen</a>

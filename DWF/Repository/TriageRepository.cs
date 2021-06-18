@@ -1,12 +1,15 @@
 using System.Collections.Generic;
 using Dapper;
 using DWF.Models;
+using Ubiety.Dns.Core;
 
 namespace DWF.Repository
 {
     public class TriageRepository
     {
         public static Repository repository = new();
+        
+        public static int opdrachten;
 
         public static List<Opdracht> Get()
         {
@@ -123,47 +126,79 @@ namespace DWF.Repository
         public static void StudentAanvraagAfgekeurd(int Id)
         {
             using var connectie = repository.Connect();
+            
+            Aanvragen_student aanvragenStudent = GetAanvraagById(Id);
+            
             connectie.Execute(
                 "DELETE FROM aanvragen_student WHERE aanvraag_id = @aanvraag_id",
                 new
                 {
                     aanvraag_id = Id
                 });
+            
+            connectie.Execute(
+                "INSERT INTO meldingen(gebruiker_id, opdracht_id, keuring) VALUES (@gebruikerId, @opdrachtId, @keuring)",
+                new
+                {
+                    gebruikerId = aanvragenStudent.gebruiker_id,
+                    opdrachtId = aanvragenStudent.opdracht_id,
+                    keuring = "afgekeurd"
+                });
         }
 
-        public static void StudentAanvraagGoedgekeurd(int Id)
+        public static bool StudentAanvraagGoedgekeurd(int Id)
         {
             using var connectie = repository.Connect();
 
             Aanvragen_student aanvragenStudent = GetAanvraagById(Id);
-            
-            connectie.Execute(
-                "INSERT INTO doet(gebruiker_id, opdracht_id) VALUES (@gebruikerId, @opdrachtId)",
-                new
-                {
-                    gebruikerId = aanvragenStudent.gebruiker_id,
-                    opdrachtId = aanvragenStudent.opdracht_id
-                });
+
+
+            if (checkKoppelingen(aanvragenStudent.gebruiker_id) > 3)
+            {
+                return false;
+            }
 
             connectie.Execute(
-                "DELETE FROM aanvragen_student WHERE aanvraag_id = @aanvraag_id",
-                new
-                {
-                    aanvraag_id = Id
-                });
+                    "INSERT INTO doet(gebruiker_id, opdracht_id) VALUES (@gebruikerId, @opdrachtId)",
+                    new
+                    {
+                        gebruikerId = aanvragenStudent.gebruiker_id,
+                        opdrachtId = aanvragenStudent.opdracht_id
+                    });
+
+                connectie.Execute(
+                    "DELETE FROM aanvragen_student WHERE aanvraag_id = @aanvraag_id",
+                    new
+                    {
+                        aanvraag_id = Id
+                    });
+
+                connectie.Execute(
+                    "INSERT INTO meldingen(gebruiker_id, opdracht_id, keuring) VALUES (@gebruikerId, @opdrachtId, @keuring)",
+                    new
+                    {
+                        gebruikerId = aanvragenStudent.gebruiker_id,
+                        opdrachtId = aanvragenStudent.opdracht_id,
+                        keuring = "goedgekeurd"
+                    });
+                    
+
+                return true;
         }
 
         public static void OpdrachtAanvraagGoedgekeurd(int Id)
         {
-            using var connectie = repository.Connect();
-            connectie.Execute(
-                "UPDATE opdrachten SET opdracht_status = @opdracht_status WHERE opdracht_id = @opdracht_id ",
-                new
-                {
-                    opdracht_status = 2,
-                    opdracht_id = Id
-                });
-        }
+            
+                using var connectie = repository.Connect();
+                connectie.Execute(
+                    "UPDATE opdrachten SET opdracht_status = @opdracht_status WHERE opdracht_id = @opdracht_id ",
+                    new
+                    {
+                        opdracht_status = 2,
+                        opdracht_id = Id
+                    });
+                
+            }
 
         public static void OpdrachtAanvraagAfgekeurd(int Id)
         {
@@ -228,6 +263,22 @@ namespace DWF.Repository
 
             var naam = voornaam + " " + achternaam;
             return naam;
+        }
+
+        public static int checkKoppelingen(int id)
+        {
+            
+                
+            using var connectie = repository.Connect();
+            var connect = connectie.Query<doet>("SELECT * FROM doet WHERE gebruiker_id = @Id", param: new {@id = id});
+
+            foreach (var VARIABLE in connect)
+            {
+                
+                opdrachten++;
+            }
+            
+            return opdrachten;
         }
     }
 }

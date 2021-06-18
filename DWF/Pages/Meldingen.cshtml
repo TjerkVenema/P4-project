@@ -1,0 +1,41 @@
+@page
+@using DWF.Models
+@using DWF.Repository
+@using DWF.Helpers
+@using Microsoft.AspNetCore.DataProtection.KeyManagement.Internal
+@model DWF.Pages.Meldingen
+
+@{
+    Layout = "Shared/_Student";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div>
+@foreach (var melding in StudentRepository.GetOpdrachten(Model.id))
+{
+    try
+    {
+        bool keuring = StudentRepository.getMelding(melding.opdracht_id);
+        if (keuring == true)
+        {
+            <p>Gefeliciteerd! uw inschrijving op opdracht @melding.opdracht_naam is goedgekeurd.</p>
+        }
+        else
+        {
+            <p>Helaas, uw inschrijving op opdracht @melding.opdracht_naam is niet goedgekeurd.</p>
+        }
+    }
+    catch
+    {
+
+    }
+}
+</div>
+</body>
+</html>

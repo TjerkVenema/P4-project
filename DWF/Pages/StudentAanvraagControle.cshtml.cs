@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using DWF.Helpers;
 using DWF.Models;
 using DWF.Repository;
@@ -9,11 +10,14 @@ namespace DWF.Pages
 {
     public class StudentAanvraagControle : PageModel
     {
+        [BindProperty] public List<Opdracht> opdrachten { get; set; }
+        
         [BindProperty]
         public Aanvragen_student AanvragenStudent { get; set; }
         
         [BindProperty]
         public Gebruiker student { get; set; }
+        
 
         public IActionResult OnGet()
         {
@@ -22,6 +26,7 @@ namespace DWF.Pages
             if (id != 0 && rol == "triage")
             {
                 int Id = Convert.ToInt32(Request.Cookies["AanvraagId"]);
+                opdrachten = TriageRepository.Get();
                 if (Id == 0)
                 {
                     return RedirectToPage("/TriageHomepagina");
@@ -40,10 +45,17 @@ namespace DWF.Pages
         public void OnPostJa()
         {
             int Id = Convert.ToInt32(Request.Cookies["AanvraagId"]);
-            TriageRepository.StudentAanvraagGoedgekeurd(Id);
-            Response.Redirect("/Aanvragen");
+            if (TriageRepository.StudentAanvraagGoedgekeurd(Id))
+            {
+                Response.Redirect("/Aanvragen");
+            }
+            else
+            {
+                Response.Redirect("/Error");
+            }
         }
         
+
         public void OnPostNee()
         {
             int Id = Convert.ToInt32(Request.Cookies["AanvraagId"]);

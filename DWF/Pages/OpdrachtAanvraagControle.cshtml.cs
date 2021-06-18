@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using DWF.Helpers;
 using DWF.Models;
 using DWF.Repository;
@@ -9,6 +10,8 @@ namespace DWF.Pages
 {
     public class OpdrachtAanvraagControle : PageModel
     {
+        [BindProperty] public List<Opdracht> opdrachten { get; set; }
+        
         [BindProperty]
         public Opdracht opdrachtaanvraag { get; set; }
         
@@ -22,6 +25,7 @@ namespace DWF.Pages
             if (id != 0 && rol == "triage")
             {
                 int Id = Convert.ToInt32(Request.Cookies["OpdrachtAanvraagId"]);
+                opdrachten = TriageRepository.Get();
                 if (Id == 0)
                 {
                     return RedirectToPage("/TriageHomepagina");

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using DWF.Helpers;
 using DWF.Models;
 using DWF.Repository;
@@ -10,11 +11,15 @@ namespace DWF.Pages
     {
         [BindProperty]
         public Gebruiker Gebruiker { get; set; }
+        
+        [BindProperty]
+        public List<DWF.Models.Meldingen> meldingen { get; set; }
 
         public IActionResult OnGet()
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
             string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            meldingen = StudentRepository.getMeldingen(id);
             if (id != 0 && rol == "student")
             {
                 Gebruiker = StudentRepository.GetStudent(id); 

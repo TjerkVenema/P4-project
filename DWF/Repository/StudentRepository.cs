@@ -97,5 +97,32 @@ namespace DWF.Repository
             }
             return opdrachten;
         }
+
+        public static List<Meldingen> getMeldingen(int gebruikerid)
+        {
+            using var connectie = repository.Connect();
+
+            var meldingen = connectie.Query<Meldingen>("SELECT * FROM meldingen WHERE gebruiker_id = @gebruiker",
+                param: new {gebruiker = gebruikerid});
+
+            return meldingen.AsList();
+        }
+        
+        public static bool getMelding(int opdracht)
+        {
+            using var connectie = repository.Connect();
+
+            var meldingen = connectie.QuerySingle<string>("SELECT keuring FROM meldingen WHERE opdracht_id = @opdracht",
+                param: new {opdracht = opdracht});
+
+            if (meldingen == "goedgekeurd")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -10,6 +10,8 @@ namespace DWF.Pages
 {
     public class OpdrachtControle : PageModel
     {
+        [BindProperty] public List<Opdracht> opdrachten { get; set; }
+        
         [BindProperty] public Opdracht Opdracht { get; set; }
 
         [BindProperty] public List<string> Studenten { get; set; }
@@ -21,6 +23,7 @@ namespace DWF.Pages
             if (id != 0 && rol == "triage")
             {
                 var opdrachtId = Convert.ToInt32(Request.Cookies["opdrachtId"]);
+                opdrachten = TriageRepository.Get();
                 if (opdrachtId == 0)
                 {
                     return RedirectToPage("/TriageHomepagina");

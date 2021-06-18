@@ -36,7 +36,7 @@ CREATE TABLE `aanvragen_student` (
   KEY `aanvragen_student_ibfk_2_idx` (`opdracht_id`),
   CONSTRAINT `aanvragen_student_ibfk_1` FOREIGN KEY (`gebruiker_id`) REFERENCES `gebruikers` (`gebruiker_id`),
   CONSTRAINT `aanvragen_student_ibfk_2` FOREIGN KEY (`opdracht_id`) REFERENCES `opdrachten` (`opdracht_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `aanvragen_student` (
 
 LOCK TABLES `aanvragen_student` WRITE;
 /*!40000 ALTER TABLE `aanvragen_student` DISABLE KEYS */;
-INSERT INTO `aanvragen_student` VALUES (12,38,1,1,NULL,'2021-06-16 00:00:00','2021-07-01 00:00:00','24 - 32'),(13,38,2,1,NULL,'2021-06-16 00:00:00','2021-06-29 00:00:00','8 - 16');
+INSERT INTO `aanvragen_student` VALUES (15,38,2,1,NULL,'2021-06-16 00:00:00','2021-06-29 00:00:00','8 - 16');
 /*!40000 ALTER TABLE `aanvragen_student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-17 16:13:14
+-- Dump completed on 2021-06-18  3:13:45
