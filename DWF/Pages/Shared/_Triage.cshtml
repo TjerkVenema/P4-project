@@ -24,20 +24,18 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                     <li class="nav-item">
-                                            <a class="nav-link text-dark" href="/Aanvragen">Er zijn ongekeurde projecten
-                                                @if (Model.opdrachten.Count != 0)
-                                                {
-                                                    <i class="fas fa-exclamation-circle melding"></i>
-                                                }
-                                                else if(Model.AanvragenStudent.Count != null)
-                                                {
-                                                    <i class="fas fa-exclamation-circle melding"></i>
-                                                }
-                                                </a>
-                                        </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="/Aanvragen">Aanvragen
+                        @if (Model.AanvragenStudent.Count != 0)
+                        {
+                            <a class="nav-link text-dark" href="/Aanvragen">
+                                Er zijn ongekeurde projecten
+                                <i class="fas fa-exclamation-circle melding"></i>
+                            </a>
+                        }
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/Aanvragen">
+                            Aanvragen
                         </a>
                     </li>
                     <li class="nav-item">
