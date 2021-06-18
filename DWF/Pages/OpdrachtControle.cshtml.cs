@@ -15,11 +15,15 @@ namespace DWF.Pages
         [BindProperty] public Opdracht Opdracht { get; set; }
 
         [BindProperty] public List<string> Studenten { get; set; }
+        
+        [BindProperty] public List<Aanvragen_student> AanvragenStudent { get; set; }
 
         public IActionResult OnGet()
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
             string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            AanvragenStudent = TriageRepository.GetAanvragen();
+
             if (id != 0 && rol == "triage")
             {
                 var opdrachtId = Convert.ToInt32(Request.Cookies["opdrachtId"]);

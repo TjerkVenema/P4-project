@@ -12,11 +12,15 @@ namespace DWF.Pages
         [BindProperty] public List<Opdracht> opdrachten { get; set; }
 
         [BindProperty] public int opdrachtId { get; set; }
+        
+        [BindProperty] public List<Aanvragen_student> AanvragenStudent { get; set; }
+
 
         public IActionResult OnGet()
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
             string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            AanvragenStudent = TriageRepository.GetAanvragen();
             if (id != 0 && rol == "triage")
             {
                 Response.Cookies.Delete("opdrachtId"); 

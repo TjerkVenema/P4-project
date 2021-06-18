@@ -21,10 +21,10 @@
             <div class="row ruimteboven">
                 <ul class="list-group flex-fill">
                     <li class="list-group-item list-group-item-secondary">Aanvraag voor opdracht</li>
-                    <li class="list-group-item">@Model.AanvragenStudent.opdracht_naam</li>
+                    <li class="list-group-item">@Model.aanvragenStudent.opdracht_naam</li>
                 </ul>
             </div>
-            @if (Model.AanvragenStudent.validatie_leeruitkomsten)
+            @if (Model.aanvragenStudent.validatie_leeruitkomsten)
             {
                 <div class="row ruimteboven">
                     <ul class="list-group flex-fill">
@@ -43,7 +43,7 @@
                     
                     <ul class="list-group flex-fill ruimteboven">
                         <li class="list-group-item list-group-item-secondary">Beschrijving</li>
-                        <li class="list-group-item">@Model.AanvragenStudent.beschrijving</li>
+                        <li class="list-group-item">@Model.aanvragenStudent.beschrijving</li>
                     </ul>
                 </div>
             }
@@ -57,11 +57,11 @@
                         <div class="justify-content-around flex-nowrap d-flex">
                             <div class="col-6">
                                 <p>Van</p>
-                                <p>@Model.AanvragenStudent.startDatum.ToShortDateString()</p>
+                                <p>@Model.aanvragenStudent.startDatum.ToShortDateString()</p>
                             </div>
                             <div class="col-6">
                                 <p>Tot</p>
-                                <p>@Model.AanvragenStudent.eindDatum.ToShortDateString()</p>
+                                <p>@Model.aanvragenStudent.eindDatum.ToShortDateString()</p>
                             </div>
                         </div>
                     </li>
@@ -71,7 +71,7 @@
             <div class="row ruimteboven">
                 <ul class="list-group flex-fill">
                     <li class="list-group-item list-group-item-secondary">Beschikbare uren</li>
-                    <li class="list-group-item">@Model.AanvragenStudent.beschikbare_uren</li>
+                    <li class="list-group-item">@Model.aanvragenStudent.beschikbare_uren</li>
                 </ul>
             </div>
             

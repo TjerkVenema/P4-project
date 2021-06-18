@@ -13,16 +13,19 @@ namespace DWF.Pages
         [BindProperty] public List<Opdracht> opdrachten { get; set; }
         
         [BindProperty]
-        public Aanvragen_student AanvragenStudent { get; set; }
+        public Aanvragen_student aanvragenStudent { get; set; }
         
         [BindProperty]
         public Gebruiker student { get; set; }
+        
+        [BindProperty] public List<Aanvragen_student> AanvragenStudent { get; set; }
         
 
         public IActionResult OnGet()
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
             string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            AanvragenStudent = TriageRepository.GetAanvragen();
             if (id != 0 && rol == "triage")
             {
                 int Id = Convert.ToInt32(Request.Cookies["AanvraagId"]);
@@ -32,7 +35,7 @@ namespace DWF.Pages
                     return RedirectToPage("/TriageHomepagina");
                 }
                 student = TriageRepository.GetStudentAanvraag(Id);
-                AanvragenStudent = TriageRepository.GetAanvraagById(Id);
+                aanvragenStudent = TriageRepository.GetAanvraagById(Id);
                 return Page(); 
             }
             else if (id != 0 && rol == "student")

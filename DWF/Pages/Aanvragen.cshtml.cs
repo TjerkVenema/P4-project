@@ -10,7 +10,7 @@ namespace DWF.Pages
 {
     public class Aanvragen : PageModel
     {
-        [BindProperty] public List<Aanvragen_student> aanvragenStudent { get; set; }
+        [BindProperty] public List<Aanvragen_student> AanvragenStudent { get; set; }
 
         [BindProperty] public int AanvraagStudentId { get; set; }
 
@@ -43,7 +43,7 @@ namespace DWF.Pages
             {
                Response.Cookies.Delete("AanvraagId");
                Response.Cookies.Delete("OpdrachtAanvraagId");
-               aanvragenStudent = TriageRepository.GetAanvragen();
+               AanvragenStudent = TriageRepository.GetAanvragen();
                opdrachten = TriageRepository.GetOpdrachtenBeoordeling();
                return Page(); 
             }

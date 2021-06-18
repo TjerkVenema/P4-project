@@ -25,9 +25,9 @@
         <div class="col-4">
             <ul class="list-group">
                 <li class="list-group-item active">Student aanvragen</li>
-                @if (Model.aanvragenStudent.Count != 0)
+                @if (Model.AanvragenStudent.Count != 0)
                 {
-                    @foreach (var aanvraag in Model.aanvragenStudent)
+                    @foreach (var aanvraag in Model.AanvragenStudent)
                     {
                         <form method="post">
                             <input asp-for="AanvraagStudentId" value="@aanvraag.aanvraag_id" type="hidden">
