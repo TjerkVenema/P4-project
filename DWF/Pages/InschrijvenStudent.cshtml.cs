@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using DWF.Helpers;
 using DWF.Models;
@@ -36,10 +37,14 @@ namespace DWF.Pages
         
         public static int opdrachtid { get; set; }
         
+        [BindProperty]
+        public List<DWF.Models.Meldingen> meldingen { get; set; }
+        
         public IActionResult OnGet()
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
             string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            meldingen = StudentRepository.getMeldingen(id);
             opdrachtid = Convert.ToInt32(Request.Query["opdracht"]);
             if (id != 0 && rol == "student")
             {

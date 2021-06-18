@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using DWF.Helpers;
@@ -35,10 +36,15 @@ namespace DWF.Pages
 
         public string Bericht { get; set; }
         
+        [BindProperty]
+        public List<DWF.Models.Meldingen> meldingen { get; set; }
+
 
         public void OnPostPasaan()
         {
+            
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
+           
             Gebruiker = StudentRepository.GetStudent(id);
 
             bool wachtwoordgoed = WachtwoordCheck();
@@ -97,6 +103,7 @@ namespace DWF.Pages
         {
             int id = HttpContext.Session.GetObjectFromJson<int>("ID");
             string rol = HttpContext.Session.GetObjectFromJson<string>("Rol");
+            meldingen = StudentRepository.getMeldingen(id);
             if (id != 0 && rol == "student")
             {
                 Gebruiker = StudentRepository.GetStudent(id);
