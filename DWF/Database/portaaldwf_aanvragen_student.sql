@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.23, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: portaaldwf
 -- ------------------------------------------------------
--- Server version	8.0.25
+-- Server version	8.0.23
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -36,7 +36,7 @@ CREATE TABLE `aanvragen_student` (
   KEY `aanvragen_student_ibfk_2_idx` (`opdracht_id`),
   CONSTRAINT `aanvragen_student_ibfk_1` FOREIGN KEY (`gebruiker_id`) REFERENCES `gebruikers` (`gebruiker_id`),
   CONSTRAINT `aanvragen_student_ibfk_2` FOREIGN KEY (`opdracht_id`) REFERENCES `opdrachten` (`opdracht_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `aanvragen_student` (
 
 LOCK TABLES `aanvragen_student` WRITE;
 /*!40000 ALTER TABLE `aanvragen_student` DISABLE KEYS */;
-INSERT INTO `aanvragen_student` VALUES (15,38,2,1,NULL,'2021-06-16 00:00:00','2021-06-29 00:00:00','8 - 16');
+INSERT INTO `aanvragen_student` VALUES (17,39,4,1,NULL,'2021-06-22 00:00:00','2021-07-06 00:00:00','32 - 40'),(18,40,5,1,NULL,'2021-06-22 00:00:00','2021-09-23 00:00:00','32 - 40');
 /*!40000 ALTER TABLE `aanvragen_student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-18  3:13:45
+-- Dump completed on 2021-06-22 10:48:57
